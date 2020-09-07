@@ -4,6 +4,7 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
 import DemoPage from "./components/DemoPage";
 import TotalLessonPage from "./components/TotalLessonPage";
+import LevelPage from "./components/LevelPage";
 
 const theme = createMuiTheme({
     palette: {
@@ -19,7 +20,8 @@ const App = () => {
         <ThemeProvider theme={theme}>
             {/* <WelcomePage /> */}
             {/* <DemoPage /> */}
-            <TotalLessonPage />
+            {/* <TotalLessonPage /> */}
+            <LevelPage />
         </ThemeProvider>
     )
 }
