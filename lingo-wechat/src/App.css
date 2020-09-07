@@ -5,30 +5,3 @@
 .bg-blur {
     backdrop-filter: blur(10px);
 }
-button {
-    @apply outline-none !important;
-}
-
-input {
-    @apply outline-none !important;
-}
-
-* {
-    position: relative;
-    box-sizing: border-box;
-}
-
-.bg-round {
-    border-radius: 2rem;
-}
-
-.top-round {
-    border-bottom-left-radius: 2.5rem;
-    border-bottom-right-radius: 2.5rem;
-}
-.h-23{
-    height: 23rem;
-}
-.shadow-blue{
-    box-shadow: 2rem 2rem 100px 1px rgba(82,125,255,1);
-}
