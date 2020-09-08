@@ -2,7 +2,7 @@ import React from 'react'
 //@ts-ignore
 import levelSrc from '../assets/card2.jpg'
 import LevelItem from './LevelItem'
-const LevelPage =() =>{
+const LevelPage =(props:any) =>{
 
     return(
         <div className="flex flex-col flex-1 w-screen h-screen">
@@ -36,9 +36,9 @@ const LevelPage =() =>{
                    <div className="flex  flex-col items-center justify-center w-screen" style={{
                        flex:"3"
                    }}>
-                       <LevelItem />
-                       <LevelItem />
-                       <LevelItem />
+                       <LevelItem levelName="Level1 入门级课程" levelClass="12节课/3个月" totalClass="1/12" access={true}/>
+                       <LevelItem levelName="Level2 进阶级课程" levelClass="12节课/3个月" access={false}/>
+                       <LevelItem levelName="Level3 飞跃级课程" levelClass="16节课/4个月" access={false}/>
                    </div>
                </div>
            </div>
