@@ -20,11 +20,11 @@ const TotalLessonPage = () =>{
                 <div className="flex justify-around pb-4">
                     <div className="flex flex-col items-center bg-blue-500 py-4 px-4 rounded-lg shadow-blue">
                         <div className="font-bold text-white text-4xl">12</div>
-                        <div className="font-light opacity-50">已解锁</div>
+                        <div className="font-light opacity-50">已购买</div>
                     </div>
                     <div className="flex flex-col items-center py-4 px-4 rounded-lg">
                         <div className="font-bold text-3xl">13</div>
-                        <div className="font-light opacity-50">未解锁</div>
+                        <div className="font-light opacity-50">进行中</div>
                     </div>
                     <div className="flex flex-col items-center py-4 px-4 rounded-lg">
                         <div className="font-bold text-3xl">14</div>

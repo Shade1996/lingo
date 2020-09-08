@@ -152,6 +152,10 @@ module.exports = (env, argv) => ({
 						]
 					},
 					{
+						"test": /\.gltf$/i,
+						"loader": "content-loader"
+					},
+					{
 						"loader": "file-loader",
 						"exclude": [/.(js|mjs|jsx|ts|tsx)$/, /.json$/]
 					}
@@ -202,7 +206,7 @@ module.exports = (env, argv) => ({
 	"devServer": {
 		"compress": true,
 		"open": true,
-		"host": 'localhost',
+		"host": "localhost",
 		"port": 3000,
 		"contentBase": path.resolve('./dist'),
 		"https": false,

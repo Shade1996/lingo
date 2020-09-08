@@ -20,10 +20,6 @@ input {
     box-sizing: border-box;
 }
 
-.bg-round {
-    border-radius: 2rem;
-}
-
 .top-round {
     border-bottom-left-radius: 2.5rem;
     border-bottom-right-radius: 2.5rem;

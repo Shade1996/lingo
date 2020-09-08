@@ -9,7 +9,8 @@ const DemoPage = () =>{
     // const [level, setlevel] = useState("")
     // const [lessonName, setlessonName] = useState("")
     // const [lessonTime, setlessonTime] = useState("")
-    const studentNumber = "234"
+    const studentNumber = "202008shwwkda1"
+    const lessonName ="Level1"
 
     return (
         <div className="flex flex-1 justify-center items-center h-screen w-screen">
@@ -26,8 +27,8 @@ const DemoPage = () =>{
                 
                 <div className="text-gray-700 text-base px-4 py-4">
                     <p className="mt-5">{`学号：${studentNumber}`}</p>
-                    <p className="mt-5">{`当前阶段：${studentNumber}`}</p>
-                    <p className="mt-5">{`课堂用时：${studentNumber}`}</p>
+                    <p className="mt-5">{`当前阶段：${lessonName}`}</p>
+                    <p className="mt-5">{`课堂用时：60min`}</p>
                 </div>
                 <div className="px-6 pt-4 pb-2">
                 <Button variant="contained" color="primary">

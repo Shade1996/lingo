@@ -9,5 +9,5 @@
 	"jsx": true,
 	"css": true,
 	"tailwind": true,
-	"3d": false
+	"3d": true
 }
