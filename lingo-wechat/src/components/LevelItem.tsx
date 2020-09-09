@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 //@ts-ignore
 import imgSrc from '../assets/card1.jpg'
 import LockIcon from '@material-ui/icons/Lock';
+import { setCurrentPage } from '../state';
+
 
 const LevelItem = (props: { access: boolean, levelName: string, levelClass:string , totalClass?:string }) =>{
 
@@ -16,7 +18,7 @@ const LevelItem = (props: { access: boolean, levelName: string, levelClass:strin
     return(
         <div className="flex max-h-full w-11/12 items-center px-2 py-2 mx-2 my-2 box-border rounded-lg bg-opacity-25 bg-white" style={{
             boxShadow: "0 19px 38px rgba(0,0,0,0.20)"
-        }}>
+        }} onClick={() => setCurrentPage("total")}>
             <img src={imgSrc} alt="" className="w-1/4  flex-1 rounded-lg" style={{
                 height:"same-as-width"
                 // width:"4rem"

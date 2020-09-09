@@ -30,3 +30,8 @@ input {
 .shadow-blue{
     box-shadow: 2rem 2rem 100px 1px rgba(82,125,255,1);
 }
+
+.profileDrawer .MuiPaper-root {
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}

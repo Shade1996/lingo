@@ -20,8 +20,8 @@ const App = () => {
         <ThemeProvider theme={theme}>
             {/* <WelcomePage /> */}
             {/* <DemoPage /> */}
-            {/* <TotalLessonPage /> */}
-            <LevelPage />
+            <TotalLessonPage />
+            {/* <LevelPage /> */}
         </ThemeProvider>
     )
 }

@@ -862,7 +862,32 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.2.0.tgz#5e0b448d27fe3091bae6216456512c5904d05661"
   integrity sha512-fsLxt0CHx2HCV9EL8lDoVkwHffsA0snUpddYjdLyXcG5E41xaamn9ZyQqOE9TUJdrRlH8/hjIf+UdOdDeKCUgg==
 
-"@lincode/utils@*":
+"@lincode/events@^1.0.9":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@lincode/events/-/events-1.0.11.tgz#220d028f6cf765f4b43f33d7826daa894b992054"
+  integrity sha512-Oi/Wt2Y7LXwdiWwEmkpFOOMpw4k761rbLFDUdu3abouiJECeZXykGxltblntEoCgv4oVKxQOAlwzCGNRNqtfsw==
+  dependencies:
+    "@lincode/promiselikes" "^1.0.0"
+    "@lincode/utils" "^1.0.0"
+
+"@lincode/promiselikes@^1.0.0", "@lincode/promiselikes@^1.0.7":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@lincode/promiselikes/-/promiselikes-1.0.14.tgz#42f9ff0adb9f55ca574a5d5a4e7288ca907e8117"
+  integrity sha512-Pzif9X8T18W5O/XA5OmrFaKDHXfOatyKFQOSrR+4n/C7tauUzuxh+N9rNGNKr8Ff+Xy4pu5A8erRPbqmvzuFLg==
+  dependencies:
+    "@lincode/utils" "^1.0.0"
+
+"@lincode/react-global-state@^1.1.10":
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/@lincode/react-global-state/-/react-global-state-1.1.10.tgz#ccc2cb7fcd131dfe48fa3d6a1027119523232596"
+  integrity sha512-lQdCQ3DN79ysNMY5+gWp01ccbwPQ3e3/bqb7hhmUrIj9Fcu/eB/QKzjFQZPfEG+ZoGZC/FC70CyRuVEaGnuyCA==
+  dependencies:
+    "@lincode/events" "^1.0.9"
+    "@lincode/promiselikes" "^1.0.7"
+    "@lincode/utils" "^1.1.17"
+    react "^16.12.0"
+
+"@lincode/utils@*", "@lincode/utils@^1.0.0", "@lincode/utils@^1.1.17":
   version "1.1.49"
   resolved "https://registry.yarnpkg.com/@lincode/utils/-/utils-1.1.49.tgz#bf2b542422cd12920e32c296f50fca6fd6da023f"
   integrity sha512-dNE2IDR/p9TvW+pmxXY6+i1P1jTjlfyec1biB3QG0NfFuyK6x/R00WYrfA+3NIl2hI7tkbp1FZwAprgEOvIITw==
@@ -1495,6 +1520,13 @@ autoprefixer@*, autoprefixer@^9.4.5:
     num2fraction "^1.2.2"
     postcss "^7.0.32"
     postcss-value-parser "^4.1.0"
+
+axios@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
+  integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+  dependencies:
+    follow-redirects "^1.10.0"
 
 babel-loader@8:
   version "8.1.0"
@@ -2970,7 +3002,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
@@ -5160,7 +5192,7 @@ react-use-measure@^2.0.0:
   dependencies:
     debounce "^1.2.0"
 
-react@^16.13.1:
+react@^16.12.0, react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
