@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button'
 //@ts-ignore
 import bgSrc from "../assets/bg.mp4"
 import { Dialog, Paper, TextField } from "@material-ui/core"
+import { setCurrentPage } from "../state"
 
 const WelcomePage = () => {
     // const [dialogOpen, setDialogOpen] = useState(false);
@@ -44,7 +45,7 @@ const WelcomePage = () => {
                                     if(!(/^1[3456789]\d{9}$/.test(currentPhone))){ 
                                         setError("手机号码有误，请重填")
                                         return false; 
-                                    } 
+                                    } else setCurrentPage("level")
                                 }}>
                                 下一步
                                 </Button>

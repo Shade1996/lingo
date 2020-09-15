@@ -62,7 +62,7 @@ const TotalLessonPage = (props:any) =>{
             </div>
             <div className="flex flex-col items-center">
                 <Card Item="项目一：太空堡垒" ItemDetail="此项目共3节课" progress={33}/>
-                <Card Item="项目一：太空堡垒" ItemDetail="此项目共3节课" progress={33}/>
+                {/* <Card Item="项目一：太空堡垒" ItemDetail="此项目共3节课" progress={33}/> */}
             </div>
         </div>
     )

@@ -22,7 +22,7 @@ const LevelItem = (props: { access: boolean, levelName: string, levelClass:strin
             <img src={imgSrc} alt="" className="w-1/4  flex-1 rounded-lg" style={{
                 height:"same-as-width"
                 // width:"4rem"
-            }}/>
+            }} onClick={() => setCurrentPage("total")}/>
             <div className="flex flex-col w-full px-2 py-2" style={{
                 flex:"4"
             }}>
