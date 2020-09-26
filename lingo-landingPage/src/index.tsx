@@ -7,7 +7,5 @@ import ReactDOM from "react-dom";
 import "./App.css";
 import App from "./App";
 import LevelModal from "./components/modals/LevelModal";
-import Support from "./pages/Support";
-import PhotoPage from "./pages/PhotoPage";
 
 ReactDOM.render(<App />, document.getElementById("app"));

@@ -134,16 +134,17 @@ const CourseCards: React.FC<{
               marginLeft: 85,
               transform: visible ? "scale(1)" : "scale(0.75)",
               opacity: visible ? 1 : 0
-            }} onClick={()=>{
-                if (indexRef.current==0) {
-                  setOpenModalA(true)
-                } else if (indexRef.current==1) {
-                  setOpenModalB(true)
-                }  else if (indexRef.current==2) {
-                  setOpenModalC(true)
-                }
-              
-              }}>
+            }} 
+            // onClick={()=>{
+            //     if (indexRef.current==0) {
+            //       setOpenModalA(true)
+            //     } else if (indexRef.current==1) {
+            //       setOpenModalB(true)
+            //     }  else if (indexRef.current==2) {
+            //       setOpenModalC(true)
+            //     }
+            //   }}
+              >
               {props.courses.map((c, i) => (
                 <div key={i} ref={setCardElement} style={{
                   position: "absolute",

@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"module": "esnext",
 		"moduleResolution": "node",
-		"strict": true,
+		"strict": false,
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,

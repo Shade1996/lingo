@@ -22,7 +22,7 @@ const Founders: React.FC<{ pageRef: any, bgColor: string, textColor: string }> =
       useFooter
       insert={(
         <div className="w-full h-full absolute" style={{
-          background: "linear-gradient(to bottom, rgb(51,50,74), rgba(51,50,74, 0))"
+          background: "linear-gradient(to bottom, rgb(14,124,121), rgba(51,50,74, 0))"
         }} />
       )}
     >

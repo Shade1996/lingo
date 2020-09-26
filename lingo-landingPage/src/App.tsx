@@ -10,8 +10,7 @@ import AppBarNav from "./components/AppBarNav";
 import VisibilityDetector from "./components/VisibilityDetecor";
 import store from "./utils/store";
 import Faq from "./pages/Faq";
-import Support from "./pages/Support";
-import PhotoPage from "./pages/PhotoPage";
+import PhotoPage from "./pages/PhtotoPage/index";
 
 export const useIsLoaded = store(true);
 
@@ -79,6 +78,11 @@ const App: React.FC = () => {
     appBarColor = "rgba(39, 52, 65, 0.75)";
   }
   else if (page === 7) {
+    bgColor = "rgba(0,0,0,0.25)";
+    textColor = "white";
+    appBarColor = "rgba(39, 52, 65, 0.75)";
+  }
+  else if (page === 8) {
     bgColor = "rgba(29,28,51,0.75)";
     textColor = "white";
     appBarColor = "rgba(39, 52, 65, 0.75)";
@@ -117,8 +121,7 @@ const App: React.FC = () => {
           <AdvancedCourses textColor={textColor} bgColor={bgColor} />,
           <CoursePreview bgColor={bgColor} textColor={textColor} pageRef={coursePreviewRef} />,
           <PhotoPage />,
-          <Founders pageRef={foundersRef} bgColor={bgColor} textColor={textColor} />,
-          <Support />,
+          <Founders pageRef={foundersRef} bgColor={bgColor} textColor={textColor} />,          
           <Faq textColor={textColor} bgColor={bgColor} />
         ] : [])
 

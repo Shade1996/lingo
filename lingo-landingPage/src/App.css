@@ -141,3 +141,10 @@ body {
 .levelModal .MuiPaper-root {
     background: rgba(0, 0, 0, 0);
 }
+
+.text-mask{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
