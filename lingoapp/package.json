@@ -20,7 +20,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon":"src/img/Icon.ico"
+        "icon": "src/img/light_icon.ico"
       },
       "makers": [
         {
@@ -28,7 +28,7 @@
           "config": {
             "name": "lingoapp"
           },
-          "icon":"src/img/Icon.ico"
+          "icon": "src/img/light_icon.ico"
         },
         {
           "name": "@electron-forge/maker-zip",
@@ -51,7 +51,7 @@
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "6.0.0-beta.53",
+    "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "6.0.0-beta.53",
     "@electron-forge/maker-rpm": "6.0.0-beta.53",
     "@electron-forge/maker-squirrel": "6.0.0-beta.53",

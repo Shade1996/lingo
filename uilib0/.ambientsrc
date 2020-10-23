@@ -1,0 +1,13 @@
+{
+	"name": "@pinyinma/uilib",
+	"strict": true,
+	"esnext": true,
+	"es2015": false,
+	"es5": false,
+	"library": true,
+	"node": false,
+	"jsx": true,
+	"css": true,
+	"tailwind": false,
+	"3d": false
+}

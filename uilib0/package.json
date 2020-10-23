@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@pinyinma/uilib": "^1.0.29"
+  }
+}
