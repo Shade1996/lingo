@@ -36,7 +36,7 @@ const Founders: React.FC<{ pageRef: any, bgColor: string, textColor: string }> =
       <NameCard name="薛来" position="CTO & 联合创始人" imgSrc={xuelaiSrc}>
         <div className="mt-2 sm:mt-0">• 曾就职于英特尔亚太研发中心系统优化工程师</div>
         <div className="mt-2 sm:mt-0">• 曾担任全球青少年创意行动挑战赛DFC评委和全国青少年科技创新大赛总决赛评委</div>
-        <div className="mt-2 sm:mt-0">• 全球顶级科创竞赛因特尔国际科学与工程大赛<NB>(Intel ISEF)一等奖，</NB><NB>计算机类别最佳奖得主</NB></div>
+        <div className="mt-2 sm:mt-0">• 全球顶级科创竞赛英特尔国际科学与工程大赛<NB>(Intel ISEF)一等奖，</NB><NB>计算机类别最佳奖得主</NB></div>
         <div className="mt-2 sm:mt-0">• ISEF欧盟青年科学家奖(European Union Contest for Young Scientists)得主</div>
         <div className="mt-2 sm:mt-0">• 2009-2010凤凰卫视影响世界华人盛典希望之星奖得主</div>
         <div className="mt-2 sm:mt-0">• 曾担任东方卫视《少年爱迪生》梦想导师</div>
