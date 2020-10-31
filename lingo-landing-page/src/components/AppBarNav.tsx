@@ -5,6 +5,8 @@ import useWindowWidth from '../utils/useWindowWidth'
 import MenuIcon from '@material-ui/icons/Menu';
 //@ts-ignore
 import logo from '../assets/logo05.png'
+import { isMobile } from "react-device-detect"
+
 const labels = [
   "凌高编程",
   "为何学习",
@@ -74,6 +76,11 @@ const AppBarNav: React.FC<{
                 <MenuIcon style={{ color: props.textColor, opacity: 0.5 }} />
               </IconButton>
             </Toolbar>
+            {!isMobile && <Button className="fixed text-sm" style={{ bottom:'10px'}} variant="contained" color="primary" size="small" onClick={
+              ()=>{window.open("http://www.lingocode.cn/download/Lingo编程-1.0.0Setup.exe")}
+            }>
+              <GetAppIcon className="mr-2"/> 下载客户端
+           </Button>}
             <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
               <List style={{ width: 200, minHeight: "100%", background: "#276cad", color: 'white' }}>
                 {labels.map((label, i) => (
