@@ -153,7 +153,7 @@ module.exports = (env, argv) => ({
                 },
                 {
                     name: 'description',
-                    content: '最适合中国青少年的AI在线编程平台'
+                    content: '适合中国青少年的AI在线编程平台'
                 }
             ],
             title: '凌高编程',
