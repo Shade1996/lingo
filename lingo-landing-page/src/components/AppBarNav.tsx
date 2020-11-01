@@ -59,7 +59,7 @@ const AppBarNav: React.FC<{
             </Tabs>
           </Toolbar>
           <Button className="fixed text-sm" style={{ right: '35px'}} variant="contained" color="primary" size="small" onClick={
-            ()=>{window.open("http://www.lingocode.cn/download/Lingo编程-1.0.0Setup.exe")}
+            ()=>{window.open("http://www.lingocode.cn/download/Lingo编程-1.0.0 Setup.exe")}
           }>
               <GetAppIcon className="mr-2"/> 下载客户端
            </Button>
@@ -77,7 +77,7 @@ const AppBarNav: React.FC<{
               </IconButton>
             </Toolbar>
             {!isMobile && <Button className="fixed text-sm" style={{ bottom:'10px'}} variant="contained" color="primary" size="small" onClick={
-              ()=>{window.open("http://www.lingocode.cn/download/Lingo编程-1.0.0Setup.exe")}
+              ()=>{window.open("http://www.lingocode.cn/download/Lingo编程-1.0.0 Setup.exe")}
             }>
               <GetAppIcon className="mr-2"/> 下载客户端
            </Button>}

@@ -2,7 +2,11 @@ import { assert } from "@lincode/utils";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 
 //@ts-ignore
-import mountainSrc from "./mountain/scene.gltf";
+// import mountainSrc from "./mountain/scene.gltf";
+
+//@ts-ignore
+import mountainSrc from "./mountain/scene.glb"
+
 //@ts-ignore
 import ipadSrc from "./ipad.png";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'

@@ -11,6 +11,8 @@ import VisibilityDetector from "./components/VisibilityDetecor";
 import store from "./utils/store";
 import Faq from "./pages/Faq";
 import PhotoPage from "./pages/PhtotoPage/index";
+//@ts-ignore
+import logo from './logo-blue.svg'
 
 export const useIsLoaded = store(true);
 
