@@ -11,8 +11,8 @@ import VisibilityDetector from "./components/VisibilityDetecor";
 import store from "./utils/store";
 import Faq from "./pages/Faq";
 import PhotoPage from "./pages/PhtotoPage/index";
-//@ts-ignore
-import logo from './logo-blue.svg'
+import ConnectSupport from "./components/ConnectSupport";
+
 
 export const useIsLoaded = store(true);
 
@@ -110,36 +110,39 @@ const App: React.FC = () => {
   const isLoaded = useIsLoaded()[0];
 
   return (
-    <div className={`stylefix w-full absolute overflow-hidden ${isLoaded ? "h-auto" : "h-screen"}`}>
+    <>
+      <div className={`stylefix w-full absolute overflow-hidden ${isLoaded ? "h-auto" : "h-screen"}`}>
+        
+        <AppBarNav page={tabIndex} scrollPage={scrollPage} appBarColor={appBarColor} textColor={textColor} />
+        
+        {[
+          <Title pageRef={titleRef} bgColor={bgColor} currentPage={page} />,
+          ...(isLoaded ? [
+            <WhyCode pageRef={whyCodeRef} bgColor={bgColor} textColor={textColor} />,
+            <WhyUs bgColor={bgColor} pageRef={whyChooseUsRef} />,
+            <CoreCourses textColor={textColor} pageRef={coreCoursesRef} bgColor={bgColor} />,
+            <AdvancedCourses textColor={textColor} bgColor={bgColor} />,
+            <CoursePreview bgColor={bgColor} textColor={textColor} pageRef={coursePreviewRef} />,
+            <PhotoPage />,
+            <Founders pageRef={foundersRef} bgColor={bgColor} textColor={textColor} />,          
+            <Faq textColor={textColor} bgColor={bgColor} />
+          ] : [])
 
-      <AppBarNav page={tabIndex} scrollPage={scrollPage} appBarColor={appBarColor} textColor={textColor} />
+        ].map((PageComponent, i) => (
+          <VisibilityDetector key={i} topOffset={200} topOnly onChange={visible => {
+            if (visible)
+              visiblePagesSet.add(i);
+            else
+              visiblePagesSet.delete(i);
 
-      {[
-        <Title pageRef={titleRef} bgColor={bgColor} currentPage={page} />,
-        ...(isLoaded ? [
-          <WhyCode pageRef={whyCodeRef} bgColor={bgColor} textColor={textColor} />,
-          <WhyUs bgColor={bgColor} pageRef={whyChooseUsRef} />,
-          <CoreCourses textColor={textColor} pageRef={coreCoursesRef} bgColor={bgColor} />,
-          <AdvancedCourses textColor={textColor} bgColor={bgColor} />,
-          <CoursePreview bgColor={bgColor} textColor={textColor} pageRef={coursePreviewRef} />,
-          <PhotoPage />,
-          <Founders pageRef={foundersRef} bgColor={bgColor} textColor={textColor} />,          
-          <Faq textColor={textColor} bgColor={bgColor} />
-        ] : [])
-
-      ].map((PageComponent, i) => (
-        <VisibilityDetector key={i} topOffset={200} topOnly onChange={visible => {
-          if (visible)
-            visiblePagesSet.add(i);
-          else
-            visiblePagesSet.delete(i);
-
-          setVisiblePages([...visiblePagesSet])
-        }}>
-          {PageComponent}
-        </VisibilityDetector>
-      ))}
-    </div>
+            setVisiblePages([...visiblePagesSet])
+          }}>
+            {PageComponent}
+          </VisibilityDetector>
+        ))}
+      </div>
+      <ConnectSupport />
+    </>
   );
 };
 export default App;

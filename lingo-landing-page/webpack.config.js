@@ -248,7 +248,7 @@ module.exports = (env, argv) => ({
     "devServer": {
         "compress": true,
         "open": true,
-        "host": "0.0.0.0",
+        "host": "localhost",
         "port": 3000,
         "contentBase": path.resolve('./dist'),
         "https": false,

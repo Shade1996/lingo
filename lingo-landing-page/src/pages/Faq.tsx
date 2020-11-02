@@ -10,7 +10,8 @@ import email from '../assets/email.svg';
 import phone from '../assets/phone.svg';
 //@ts-ignore
 import QR from '../assets/QR.jpg';
-
+import { Fab } from '@material-ui/core';
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 
 const faq = [{
   id: 0,

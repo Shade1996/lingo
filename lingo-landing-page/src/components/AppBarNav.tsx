@@ -1,10 +1,13 @@
 import React, { useState, useCallback } from 'react'
-import { AppBar, Tabs, Toolbar, Tab, IconButton, Drawer, ListItem, List, Button } from '@material-ui/core'
+import { AppBar, Tabs, Toolbar, Tab, IconButton, Drawer, ListItem, List, Button, Fab } from '@material-ui/core'
 import GetAppIcon from '@material-ui/icons/GetApp';
 import useWindowWidth from '../utils/useWindowWidth'
 import MenuIcon from '@material-ui/icons/Menu';
 //@ts-ignore
 import logo from '../assets/logo05.png'
+//@ts-ignore
+import logo1 from '../assets/logo-blue.png'
+
 import { isMobile } from "react-device-detect"
 
 const labels = [
@@ -42,8 +45,9 @@ const AppBarNav: React.FC<{
 
       {windowWidth > 1024 ? (
         <div className="flex">
-          <div className='w-24 h-6 absolute' style={{ left: '35px' }}>
-            <div className='w-full'>
+          <div className='w-24 h-8 absolute' style={{ left: '35px' }}>
+            <div className="flex">
+              <img src={logo1} className="h-8 w-8 self-center" alt=""/>
               <img src={logo} className='w-full h-full' />
             </div>
           </div>
@@ -67,7 +71,8 @@ const AppBarNav: React.FC<{
       ) : (
           <>
           <div className='w-24 h-6 absolute text-center' style={{ left: '50%',transform:'translateX(-50%)' }}>
-            <div className='w-full'>
+            <div className='w-full flex'>
+              <img src={logo1} className="h-8 w-8 self-center" alt=""/>
               <img src={logo} className='w-full h-full' />
             </div>
           </div>
