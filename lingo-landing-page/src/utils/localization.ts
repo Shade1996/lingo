@@ -1,6 +1,6 @@
 import LocalizedStrings from 'react-localization';
 
-let strings = new LocalizedStrings({
+let language = new LocalizedStrings({
     en:{
       how:"How do you want your egg today?",
       boiledEgg:"Boiled egg",
@@ -17,4 +17,4 @@ let strings = new LocalizedStrings({
     }
    });
 
-   export default strings
+   export default language
