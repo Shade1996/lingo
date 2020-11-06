@@ -21,7 +21,7 @@ const Title: React.FC<{ bgColor: string, pageRef: any, currentPage: number }> = 
             凌高编程 &nbsp;&nbsp;
           </span>
           <span className="inline-block whitespace-no-wrap text-center">
-            赋能你的创造力
+          破译想象的编码
           </span>
         </h1>
         <h2 className="text-xl md:text-3xl opacity-75 mb-5 text-center">

@@ -30,14 +30,14 @@ app.use (function (req, res, next) {
     }
 });
 
-// const session = require('cookie-session');
-// app.use(
-//   session({
-//     secret: "MakeLingoGreatAgain",
-//     httpOnly: true,  // Don't let browser javascript access cookies.
-//     secure: true, // Only use cookies over https.
-//   })
-// );
+const session = require('cookie-session');
+app.use(
+  session({
+    secret: "MakeLingoGreatAgain",
+    httpOnly: true,  // Don't let browser javascript access cookies.
+    secure: true, // Only use cookies over https.
+  })
+);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
