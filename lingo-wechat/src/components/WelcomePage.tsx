@@ -31,23 +31,24 @@ const WelcomePage = () => {
                     </div>
                     {showPhoneNumber ? (
                         <div className="w-full h-full bg-blur absolute flex-col p-10">
-                            <p className="text-4xl text-gray-400 mt-20 font-bold">绑定手机号</p>
-                            <p className=" text-sm text-gray-400 opacity-50 mb-10">请输入正确的手机号，查看您孩子的作品</p>
-                            <TextField error={!!error} helperText={error} label="请输入11位手机号" fullWidth onChange={e=>{
+                            <p className="text-4xl text-gray-400 mt-20 font-bold">请登陆</p>
+                            <p className=" text-sm text-gray-400 opacity-50 mb-10">请输入正确的帐号和密码，查看您孩子的作品</p>
+                            <TextField error={!!error} helperText={error} label="请输入帐号" fullWidth onChange={e=>{
+                                setCurrentPhone(e.target.value)
+                                setError("")
+                            }}/>
+                            <TextField error={!!error} helperText={error} label="请输入密码" fullWidth onChange={e=>{
                                 setCurrentPhone(e.target.value)
                                 setError("")
                             }}/>
                             <div className="mt-16 flex justify-around">
-                               <Button variant="outlined" color="primary">
-                                获取验证码
-                                </Button>
                                 <Button variant="outlined" color="primary" onClick={()=>{
                                     if(!(/^1[3456789]\d{9}$/.test(currentPhone))){ 
                                         setError("手机号码有误，请重填")
                                         return false; 
                                     } else setCurrentPage("level")
                                 }}>
-                                下一步
+                                登陆
                                 </Button>
                             </div>
                         </div>

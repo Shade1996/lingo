@@ -33,11 +33,10 @@ const Card = (props:{Item :string , ItemDetail:string , progress:number }) => {
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="w-7/12">
-                            <LinearProgress variant="determinate" className="w-full" value={props.progress}/>
-                            <div className="opacity-75">
-                                {/* {props.progress+"%"} */}
+                            {/* <LinearProgress variant="determinate" className="w-full" value={props.progress}/> */}
+                            {/* <div className="opacity-75">
                                 1/3
-                            </div>
+                            </div> */}
                         </div>
                         <div className="px-2 py-1 mb-2 text-blue-700 border border-blue-700 rounded-lg">进入</div>
                     </div>     

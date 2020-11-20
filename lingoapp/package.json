@@ -1,6 +1,6 @@
 {
   "name": "lingoapp",
-  "productName": "Lingo编程",
+  "productName": "lingo",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
@@ -26,9 +26,9 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "lingoapp"
-          },
-          "icon": "src/img/light_icon.ico"
+            "certificateFile": "Lingo.pfx",
+            "certificatePassword": "asdfasdf1"
+          }
         },
         {
           "name": "@electron-forge/maker-zip",

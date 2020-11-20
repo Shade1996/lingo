@@ -34,7 +34,7 @@ const TotalLessonPage = (props:any) =>{
                         <div className="text-sm opacity-75">{`${x} ${day}${y}, ${year}`}</div>
                         <div className="text-3xl">Hey,
                             <span className="font-bold">Shade!</span>
-                            <ExpandMoreIcon onClick={()=> setOpenDrawer(true)}/>
+                            {/* <ExpandMoreIcon onClick={()=> setOpenDrawer(true)}/> */}
                             <Drawer className="profileDrawer" anchor="bottom" open={openDrawer} onClose={() => setOpenDrawer(false)}>
                                 <div className="w-screen max-h-full flex flex-col flex-1 px-2 py-2 ">
                                     <ChildList />
