@@ -8,7 +8,14 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import modelSrc from "../assets/model/fantasy-sea-keep/source/scene.gltf"
 //@ts-ignore
 import bgSrc from "../assets/video.mp4"
+//@ts-ignore
+import image1 from "../assets/item1.jpeg"
+//@ts-ignore
+import image2 from "../assets/item2.jpeg"
+//@ts-ignore
+import image3 from "../assets/item3.jpeg"
 
+//@ts-ignore
 let theta = 0.004
 
 function Castle(){
@@ -92,9 +99,9 @@ const LevelPage =(props:any) =>{
                    <div className="flex  flex-col items-center justify-center w-screen" style={{
                        flex:"3"
                    }}>
-                       <LevelItem levelName="Level1 入门级课程" levelClass="12节课/3个月" totalClass="1/12" access={true}/>
-                       <LevelItem levelName="Level2 进阶级课程" levelClass="12节课/3个月" access={false}/>
-                       <LevelItem levelName="Level3 飞跃级课程" levelClass="16节课/4个月" access={false}/>
+                       <LevelItem levelName="Level1 入门级课程" levelClass="12节课/3个月" access={true}  itemImage={image1}/>
+                       <LevelItem levelName="Level2 进阶级课程" levelClass="12节课/3个月" access={false} itemImage={image2}/>
+                       <LevelItem levelName="Level3 飞跃级课程" levelClass="16节课/4个月" access={false} itemImage={image3}/>
                    </div>
                </div>
            </div>

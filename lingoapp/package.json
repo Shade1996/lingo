@@ -20,13 +20,14 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "src/img/light_icon.ico"
+        "icon": "src/img/light_icon.ico",
+        "executableName": "lingoapp"
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "certificateFile": "Lingo.pfx",
+            "certificateFile": "cert.pfx",
             "certificatePassword": "asdfasdf1"
           }
         },
@@ -38,10 +39,6 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
           "config": {}
         }
       ]

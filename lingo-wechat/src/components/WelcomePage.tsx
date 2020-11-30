@@ -44,7 +44,7 @@ const WelcomePage = () => {
                             <div className="mt-16 flex justify-around">
                                 <Button variant="outlined" color="primary" onClick={()=>{
                                     if(!(/^1[3456789]\d{9}$/.test(currentPhone))){ 
-                                        setError("手机号码有误，请重填")
+                                        setError("帐号或密码错误，请重填")
                                         return false; 
                                     } else setCurrentPage("level")
                                 }}>

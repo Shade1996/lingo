@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import WelcomePage from "./components/WelcomePage";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
-import DemoPage from "./components/DemoPage";
 import TotalItemPage from "./components/TotalItemPage";
 import LevelPage from "./components/LevelPage";
 import { useCurrentPage } from "./state";
@@ -37,8 +36,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             {/* <WelcomePage /> */}
-            {/* <DemoPage /> */}
-            <TotalItemPage />
+           <TotalItemPage />
             {/* <LevelPage /> */}
         </ThemeProvider>
     )
