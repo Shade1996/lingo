@@ -6,19 +6,11 @@ import bg0Src from "../assets/bg0.png";
 //@ts-ignore
 import bg1Src from "../assets/bg1.png";
 //@ts-ignore
-import bg2Src from "../assets/bg2.png";
-//@ts-ignore
-import bg3Src from "../assets/bg3.png";
-//@ts-ignore
 import bg4Src from "../assets/bg4.png";
 //@ts-ignore
 import materialBgSrc from "../assets/material-bg.jpg";
 import { useState } from 'react';
-//@ts-ignore
-import csta1Src from '../assets/csta1.jpg'
 
-import LevelModal  from '../components/modals/LevelModal'
-import { Dialog } from '@material-ui/core';
 
 const courses = [
   {

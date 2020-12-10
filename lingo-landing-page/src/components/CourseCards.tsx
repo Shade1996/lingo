@@ -10,8 +10,6 @@ import VisibilityDetector from './VisibilityDetecor';
 import { tween } from "shifty";
 import useWindowWidth from '../utils/useWindowWidth';
 import LevelModal from './modals/LevelModal';
-//@ts-ignore
-import csta1Src from '../assets/ipad3.jpg'
 import { useState } from 'react';
 
 
@@ -204,7 +202,7 @@ const CourseCards: React.FC<{
     </VisibilityDetector>
     <Dialog className="levelModal" fullScreen open={openModalA} onClose={() => setOpenModalA(false)}>
         <LevelModal onCloseModal={() => setOpenModalA(false)}>
-          <img className="w-full md:w-1/2 rounded-lg" src={csta1Src}/>
+          {/* <img className="w-full md:w-1/2 rounded-lg" src={csta1Src}/> */}
           <div className="w-full md:w-1/2 flex flex-col justify-center space-y-3 p-8 break-normal tracking-wide">
             <p className="text-center font-bold text-2xl text-white bg-black mb-10 rounded-lg">Level 1 入门级课程</p>
             <div className="grid grid-cols-4 gap-2">
@@ -228,7 +226,6 @@ const CourseCards: React.FC<{
       </Dialog>
       <Dialog className="levelModal" fullScreen open={openModalB} onClose={() => setOpenModalB(false)}>
         <LevelModal onCloseModal={() => setOpenModalB(false)}>
-          <img className="w-full md:w-1/2" src={csta1Src} />
           <div className="w-full md:w-1/2 flex flex-col justify-center space-y-3 p-8 break-normal tracking-wide">
             <p className="text-center font-bold text-2xl text-white bg-black mb-10 rounded-lg">Level 2 进阶级课程（12节）</p>
             <div className="grid grid-cols-4 gap-2">
@@ -253,7 +250,6 @@ const CourseCards: React.FC<{
       </Dialog>
       <Dialog className="levelModal" fullScreen open={openModalC} onClose={() => setOpenModalC(false)}>
         <LevelModal onCloseModal={() => setOpenModalC(false)}>
-          <img className="w-full md:w-1/2" src={csta1Src} />
           <div className="w-full md:w-1/2 flex flex-col justify-center space-y-3 p-8 break-normal tracking-wide">
             <p className="text-center font-bold text-2xl text-white bg-black mb-10 rounded-lg">Level 3 飞越级课程（14节）</p>
             <div className="grid grid-cols-4 gap-2">

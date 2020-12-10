@@ -32,6 +32,12 @@ button {
     transform: translateX(-50%) translateY(-50%) !important;
 }
 
+.center-x {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
 .center-y {
     position: absolute !important;
     top: 50% !important;

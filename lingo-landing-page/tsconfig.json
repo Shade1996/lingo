@@ -6,7 +6,7 @@
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
-		"target": "es5",
+		"target": "ES2015",
 		"downlevelIteration": true,
 		"jsx": "react",
 		"outDir": "temp"

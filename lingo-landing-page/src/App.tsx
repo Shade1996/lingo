@@ -12,7 +12,23 @@ import store from "./utils/store";
 import Faq from "./pages/Faq";
 import PhotoPage from "./pages/PhtotoPage/index";
 import ConnectSupport from "./components/ConnectSupport";
+import { assert } from "@lincode/utils";
 
+const preload = document.querySelector("#preload");
+assert(preload);
+
+setTimeout(() => {
+    preload.animate([
+        { opacity: 1 },
+        { opacity: 0 }
+    ], {
+        duration: 500,
+        iterations: 1,
+        fill: "forwards"
+
+    }).onfinish = () => preload.parentElement?.removeChild(preload);
+
+}, 100);
 
 export const useIsLoaded = store(true);
 

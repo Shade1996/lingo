@@ -1,7 +1,6 @@
 import React from 'react'
 import Page from '../components/Page'
 import Card from '../components/Card'
-import NB from '../components/nb'
 
 const WhyUs: React.FC<{ bgColor: any, pageRef: any }> = props => {
 

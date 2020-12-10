@@ -5,13 +5,11 @@ import candySrc from '../assets/candy.jpg'
 //@ts-ignore
 import xuelaiSrc from '../assets/xuelai.jpg'
 //@ts-ignore
-import hyunkiSrc from '../assets/li.jpg'
-//@ts-ignore
 import yeSrc from '../assets/ye.jpg' 
 //@ts-ignore
 import boySrc from '../assets/voxel.jpg'
 import NameCard from '../components/NameCard'
-import NB from '../components/nb'
+import NB from '../components/NB'
 import strings from '../utils/localization'
 
 const Founders: React.FC<{ pageRef: any, bgColor: string, textColor: string }> = (props) => {
