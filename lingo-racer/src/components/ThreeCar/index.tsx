@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useLoader } from 'react-three-fiber';
 //@ts-ignore
-import airwingSrc from "./airwing.glb"
+import car from "./car.glb"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Spring } from 'react-spring/renderprops';
 
-export default function ArWing() {
-    //@ts-ignore
-	const { nodes } = useLoader(GLTFLoader, airwingSrc);
+export default function Car() {
+	const gltf = useLoader(GLTFLoader, car);
 
     const [lane, setLane] = useState(0)
 
@@ -22,16 +21,7 @@ export default function ArWing() {
 	return (
         <Spring from={{ lane: 0 }} to={{ lane: lane }}>
             {p => (
-                <group scale={[0.5, 0.5, 0.5]} position={[p.lane, 0, 0]}>
-                    <mesh visible geometry={nodes.Default.geometry}>
-                        <meshStandardMaterial
-                         attach="material"
-                         color="white"
-                         roughness={1}
-                         metalness={0}
-                        />
-                    </mesh>
-                </group>
+                <primitive object={gltf.scene} scale={[0.25, 0.25, 0.25]} position={[p.lane, -0.8, 2.8]} rotation={[0,0,0]} />
             )}
         </Spring>
 	);

@@ -8,8 +8,9 @@ const App = () => {
 
     return (
         <>
-            {page === "home" && <Home />}
-            {page === "game" && <Game />}
+            {/* {page === "home" && <Home />} */}
+            {/* {page === "game" && <Game />} */}
+            <Game />
         </>
     )
 }

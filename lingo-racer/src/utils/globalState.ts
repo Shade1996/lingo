@@ -5,9 +5,10 @@ export default <T>(value: T) => {
     const setPageFunctions = new Set<Function>()
 
     const globalSetPage = (page: T) => {
-        for (const setPage of setPageFunctions) {
+        for (const setPage of setPageFunctions)
             setPage(page)
-        }
+            
+        globalPage = page
     }
 
     const usePage = () => {
