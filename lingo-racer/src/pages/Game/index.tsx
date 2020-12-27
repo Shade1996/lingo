@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useMemo, useRef } from 'react'
-import { Canvas } from 'react-three-fiber'
+import { Canvas, useThree } from 'react-three-fiber'
 import ThreeCar from '../../components/ThreeCar'
 import ThreeGround from '../../components/ThreeGround'
 import ThreeSkybox from '../../components/ThreeSkybox'
@@ -7,6 +7,8 @@ import ThreeSun from '../../components/ThreeSun'
 import ThreeText from '../../components/ThreeText'
 import getRandomInt from '../../utils/getRandomInt'
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
+import { useSpring } from 'react-spring'
+import { OrbitControls } from 'drei'
 
 function Loading() {
 	return (
@@ -23,6 +25,24 @@ function Loading() {
 		</mesh>
 	);
 }
+
+function Controls() {
+    const { gl, camera } = useThree()
+  
+    useSpring({
+        from: { x: 0, z: -3 },
+        to: [{ x: 1, z: 0 }, { x: 0, z: 3 }],
+        onFrame: p => {
+            camera.position.y = 1
+            camera.position.x = p.x
+            camera.position.z = p.z
+        },
+        delay: 3000,
+        config: { duration: 2000 }
+    })
+  
+    return <OrbitControls target={[0, 0, 0]} args={[camera, gl.domElement]} enabled={false} />
+  }
 
 const Game = () =>{
     return(
@@ -41,6 +61,8 @@ const Game = () =>{
                     <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
                     <Vignette eskil={false} offset={0.1} darkness={1.1} />
                 </EffectComposer>
+
+                <Controls />
             </Canvas>
         </div>
     )

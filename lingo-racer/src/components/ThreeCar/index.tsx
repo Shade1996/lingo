@@ -25,7 +25,7 @@ export default function Car() {
 	return (
         <Spring from={{ lane: 0 }} to={{ lane: lane }}>
             {p => (
-                <primitive object={gltf.scene} scale={[0.007, 0.007, 0.007]} position={[p.lane, -0.8, 2.8]} />
+                <primitive object={gltf.scene} scale={[0.007, 0.007, 0.007]} position={[p.lane, 0, 0]} />
             )}
         </Spring>
 	);
