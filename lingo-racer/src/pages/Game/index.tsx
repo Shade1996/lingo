@@ -1,8 +1,5 @@
 import React, { Suspense, useEffect, useMemo, useRef } from 'react'
-import { useSpring, animated, interpolate } from 'react-spring'
-import { Spring } from 'react-spring/renderprops'
 import { Canvas } from 'react-three-fiber'
-import { Group } from 'three'
 import ThreeCar from '../../components/ThreeCar'
 import ThreeGround from '../../components/ThreeGround'
 import ThreeSkybox from '../../components/ThreeSkybox'
@@ -33,7 +30,7 @@ const Game = () =>{
             <Canvas>
                 <ThreeSkybox />
                 <ambientLight />
-                <pointLight position={[10, 10, 10]} />
+                <pointLight position={[10, 10, 10]} intensity={10} />
                 <Suspense fallback={<Loading />}>
                     <ThreeCar />
                 </Suspense>
