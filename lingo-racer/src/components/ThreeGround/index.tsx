@@ -8,6 +8,10 @@ export default function Terrain() {
     useFrame(() => {
         //@ts-ignore
         terrain.current.position.z += 0.4;
+        //@ts-ignore
+        if (terrain.current.position.z > 200)
+        //@ts-ignore
+        terrain.current.position.z = 10
     });
     return (
         <mesh
