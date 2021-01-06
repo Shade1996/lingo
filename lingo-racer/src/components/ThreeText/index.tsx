@@ -7,7 +7,7 @@ import getRandomInt from '../../utils/getRandomInt';
 //@ts-ignore
 import Roboto from './RobotoLight_Regular.json';
 
-const ThreeLetter: React.FC<{ lane: number, index: number, letter: string }> = (props) => {
+const ThreeLetter: React.FC<{ lane: number, letter: string }> = (props) => {
     const font = new FontLoader().parse(Roboto);
 
     const textOptions = {
@@ -17,21 +17,10 @@ const ThreeLetter: React.FC<{ lane: number, index: number, letter: string }> = (
     };
         
     return (
-        <mesh position={[props.lane, -0.5, props.index * -2]} scale={[1, 1, 0.2]}>
+        <mesh position={[props.lane * 1.2, -0.5, -1]} scale={[1, 1, 0.2]}>
             <textGeometry attach='geometry' args={[props.letter, textOptions]} />
             <meshStandardMaterial attach='material' />
         </mesh>
-            // <>
-            //     <Spring from={{textZ:-10 + props.index * -2}} to={{textZ:5}} config={{ duration: 2000 + props.index * 100 }}>
-            //         {p=>(
-            //             <mesh position={[props.lane, -0.5, p.textZ]}>
-            //                 <textGeometry attach='geometry' args={['t', textOptions]} />
-            //                 <meshStandardMaterial attach='material' />
-            //             </mesh>
-            //         )
-            //         }
-            //     </Spring>
-            // </>
     )
 }
 
@@ -45,18 +34,9 @@ export default function () {
         groupRef.current.position.z += 0.1
     })
 
-	const letters = useMemo(() => {
-        const letters: Array<[string, number]> = []
-        for (let i = 0; i < 100; ++i)
-            letters.push([randomLetter(), getRandomInt(-2, 2)])
-        return letters
-    }, [])
-
     return (
-        <group ref={groupRef}>
-            {letters.map(([letter, lane], i) => (
-                <ThreeLetter lane={lane} letter={letter} index={i} key={i} />
-            ))}
+        <group ref={groupRef} position={[0, 0, -30]}>
+            <ThreeLetter lane={0} letter="b" />
         </group>
     )
 }

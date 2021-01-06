@@ -39,11 +39,32 @@ const Controls = () => {
             camera.position.x = p.x
             camera.position.z = p.z
         },
-        delay: 3000,
-        config: { duration: 2000 }
+        // delay: 3000,
+        config: { duration: 0 }
     })
   
     return <OrbitControls target={[0, 0, 0]} args={[camera, gl.domElement]} enabled={false} />
+}
+
+const LetterGenerator = () => {
+    const [letters, setLetters] = useState([])
+
+    useEffect(() => {
+        const l = []
+
+        setInterval(() => {
+            l.push(1)
+            setLetters([...l])
+        }, 1000)
+    }, [])
+
+    return (
+        <>
+            {letters.map((l, i) => (
+                <ThreeText key={i} />
+            ))}
+        </>
+    )
 }
 
 const Game = () =>{
@@ -56,7 +77,7 @@ const Game = () =>{
                 <Suspense fallback={<Loading />}>
                     <ThreeCar />
                 </Suspense>
-                {/* <ThreeText /> */}
+                {/* <LetterGenerator /> */}
                 <ThreeGround />
 
                 <EffectComposer>

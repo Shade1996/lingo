@@ -5149,6 +5149,11 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
+pizzicato@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/pizzicato/-/pizzicato-0.6.4.tgz#a386ec79e4e615cf8e7e125959a3cb7d1da9e607"
+  integrity sha512-1Y4UGnhdBvCoeRTt4Cor/zPRsH/pEAGsBESy0zeR8mH2i2piJRQLEEctkzUJGo6h64GiepZy+LFaJ/a3riR+WA==
+
 pkg-dir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-3.0.0.tgz#2749020f239ed990881b1f71210d51eb6523bea3"

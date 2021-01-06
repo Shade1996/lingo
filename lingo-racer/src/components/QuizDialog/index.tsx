@@ -1,12 +1,15 @@
 import { Dialog, LinearProgress } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import dedent from 'ts-dedent'
-import Highlight, { defaultProps } from "prism-react-renderer";
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { green } from '@material-ui/core/colors';
 import CancelIcon from '@material-ui/icons/Cancel';
 import GrowTransition from '../GrowTransition';
 import { useGas } from '../../state/useGas';
+import Pizzicato from '../Pizzicato';
+import { Spring } from 'react-spring/renderprops';
+import QuestionChoices from '../QuestionChoices';
+import QuestionFillIn from '../QuestionFillIn';
 
 const quiz = {
     title: "level 1 复习",
@@ -25,7 +28,49 @@ const quiz = {
                     }
                 `
             ],
-            answer: 1
+            answer: 0
+        },
+        {
+            question: "hahahahahaha",
+            choices: ["1", "2", "3", "4", "5", "6"],
+            type: "fill-in",
+            answer: "1,2,3"
+        },
+        {
+            question: "hahahahahaha",
+            choices: [
+                dedent`
+                    shuxie("hello")
+                `,
+                dedent`
+                    shuxie("world")
+                `
+            ],
+            answer: 0
+        },
+        {
+            question: "hahahahahaha",
+            choices: [
+                dedent`
+                    shuxie("hello")
+                `,
+                dedent`
+                    shuxie("world")
+                `
+            ],
+            answer: 0
+        },
+        {
+            question: "hahahahahaha",
+            choices: [
+                dedent`
+                    shuxie("hello")
+                `,
+                dedent`
+                    shuxie("world")
+                `
+            ],
+            answer: 0
         },
         {
             question: "hahahahahaha",
@@ -58,7 +103,7 @@ const Timer = (prop) => {
             setSeconds(time)
             setPercent(time / totalTime * 100)
 
-            if (time < 0) {
+            if (time <= 0) {
                 clearInterval(interval)
                 return
             }
@@ -106,7 +151,7 @@ export default function QuizDialog() {
 
     }
 
-    const [gas, setGas] = useGas()
+    const [gas] = useGas()
     const [correct, setCorrect] = useState<true | false>(true)
     const [show, setShow] = useState(false)
     const [qIndex, setQIndex] = useState(0)
@@ -126,6 +171,11 @@ export default function QuizDialog() {
         }
     }, [show, qIndex])
     
+    const setAnswer = (isCorrect) => {
+        setCorrect(isCorrect)
+        setShow(true)
+    }
+
     return (
         <Dialog
          fullScreen
@@ -133,35 +183,18 @@ export default function QuizDialog() {
          onClose={handleClose}
          PaperProps={{ style: { background: "rgba(0,0,0,0)" }  }}
         >
-            <div className="text-white p-10">
-                {q.question}
-                <div className="mb-4" />
-                {q.choices.map((choice, i) => (
-                    <div key={i} onClick={() => {
-                        const isCorrect = i === q.answer
-                        if (!isCorrect) setGas(gas - 0.5)
-                        setCorrect(isCorrect)
-                        setShow(true)
-                    }}>
-                        <Highlight {...defaultProps} code={choice} language="javascript">
-                            {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                <pre className={className} style={style}>
-                                    {tokens.map((line, i) => (
-                                    <div {...getLineProps({ line, key: i })}>
-                                        {line.map((token, key) => (
-                                        <span {...getTokenProps({ token, key })} />
-                                        ))}
-                                    </div>
-                                    ))}
-                                </pre>
-                            )}
-                        </Highlight>
-                        <div className="mb-4" />
-                    </div>
-                ))}
-            </div>
+            {q.type === "fill-in" ? (
+                <QuestionFillIn q={q} setAnswer={setAnswer} />
+            ) : (
+                <QuestionChoices q={q} setAnswer={setAnswer} />
+            )}
             <Timer pause={show} />
             <ResultDialog correct={correct} open={show} />
+            <Spring from={{ frequency: 400 }} to={{ frequency: gas * 3000 + 200 }}>
+                {p => (
+                    <Pizzicato frequency={p.frequency} />
+                )}
+            </Spring>
         </Dialog>
     )
 }

@@ -6,6 +6,10 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Spring } from 'react-spring/renderprops';
 import useReflection from '../../hooks/useReflection';
 
+const random = (min: number, max: number) => {
+    return Math.round((Math.random() * (max - min)) + min)
+}
+
 export default function Car() {
 	const gltf = useLoader(GLTFLoader, car);
     useReflection(gltf)
@@ -14,7 +18,7 @@ export default function Car() {
 
     useEffect(() => {
         document.addEventListener("click", () => {
-            setLane(Math.random() * 10 - 5)
+            setLane(random(-1, 1))
         })
         return () => {
         }
@@ -25,7 +29,7 @@ export default function Car() {
 	return (
         <Spring from={{ lane: 0 }} to={{ lane: lane }}>
             {p => (
-                <primitive object={gltf.scene} scale={[0.007, 0.007, 0.007]} position={[p.lane, 0, 0]} />
+                <primitive object={gltf.scene} scale={[0.005, 0.005, 0.005]} position={[p.lane, 0, 0]} />
             )}
         </Spring>
 	);
