@@ -10,6 +10,7 @@ import Pizzicato from '../Pizzicato';
 import { Spring } from 'react-spring/renderprops';
 import QuestionChoices from './QuestionChoices';
 import QuestionFillIn from './QuestionFillIn';
+import Timer from './Timer';
 
 const quiz = {
     title: "level 1 复习",
@@ -87,44 +88,6 @@ const quiz = {
     ]
 }
 
-const totalTime = 50
-
-const Timer = (prop) => {
-    const [percent, setPercent] = useState(100)
-    const [seconds, setSeconds] = useState(totalTime)
-
-    useEffect(() => {
-        if (prop.pause) return
-
-        let time = totalTime
-        
-        const interval = setInterval(()=>{
-            time--
-            setSeconds(time)
-            setPercent(time / totalTime * 100)
-
-            if (time <= 0) {
-                clearInterval(interval)
-                return
-            }
-        },1000)
-
-        return () => {
-            clearInterval(interval)
-        }
-    }, [prop.pause])
-
-    return (
-        <div className="w-10/12 center-x bottom-0 mb-5">
-            <div className="text-white">剩余{seconds}秒</div>
-            <LinearProgress variant="determinate" value={percent} style={{
-                borderRadius:5,
-                height:10,
-               }} />
-        </div>
-    )
-}
-
 const ResultDialog = (props) => {
     return (
         <Dialog maxWidth="sm" open={props.open} TransitionComponent={GrowTransition}>
@@ -188,7 +151,7 @@ export default function QuizDialog() {
             ) : (
                 <QuestionChoices q={q} setAnswer={setAnswer} />
             )}
-            <Timer pause={show} />
+            <Timer pause={show} totalTime={50}/>
             <ResultDialog correct={correct} open={show} />
             <Spring from={{ frequency: 400 }} to={{ frequency: gas * 3000 + 200 }}>
                 {p => (
