@@ -2,8 +2,9 @@ import React from 'react'
 import { useGas } from '../../state/useGas'
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-export default function QuestionChoices({ q, setAnswer }) {
+export default function QuestionChoices(props) {
     const [gas, setGas] = useGas()
+    const { q, setAnswer } = props
 
     return (
         <div className="text-white p-10">

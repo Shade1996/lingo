@@ -18,7 +18,7 @@ export default function QuestionFillIn({ q, setAnswer }) {
                     }} />  
                 ))}
             </div>
-            <div className="text-white p-10 space-x-4 space-y-3 bottom-0 mb-32 absolute">
+            <div className="text-white p-10 space-x-4 space-y-3 bottom-0 mb-32 fixed">
                 {bottomChips.map((p, i) => (
                     <Chip label={p} key={i} clickable className={i === 0 ? "ml-4 mt-3" : ""} onClick={() => {
                         const newBottomChips = bottomChips.filter(value => value !== p)

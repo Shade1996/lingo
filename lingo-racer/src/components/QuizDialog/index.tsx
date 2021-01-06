@@ -8,8 +8,8 @@ import GrowTransition from '../GrowTransition';
 import { useGas } from '../../state/useGas';
 import Pizzicato from '../Pizzicato';
 import { Spring } from 'react-spring/renderprops';
-import QuestionChoices from '../QuestionChoices';
-import QuestionFillIn from '../QuestionFillIn';
+import QuestionChoices from './QuestionChoices';
+import QuestionFillIn from './QuestionFillIn';
 
 const quiz = {
     title: "level 1 复习",
@@ -131,7 +131,7 @@ const ResultDialog = (props) => {
             <div className="p-4 mx-auto text-center">
             {props.correct ? (
                 <div>
-                    <CheckCircleOutlineIcon fontSize="large" style={{ color: green[500] }} className="" />
+                    <CheckCircleOutlineIcon fontSize="large" style={{ color: green[500] }} />
                     <div>回答正确！</div>
                 </div>
             ) : (
@@ -152,7 +152,7 @@ export default function QuizDialog() {
     }
 
     const [gas] = useGas()
-    const [correct, setCorrect] = useState<true | false>(true)
+    const [correct, setCorrect] = useState(true)
     const [show, setShow] = useState(false)
     const [qIndex, setQIndex] = useState(0)
     const q = quiz.questions[qIndex]
