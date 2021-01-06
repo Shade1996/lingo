@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useMemo, useRef } from 'react'
+import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useThree } from 'react-three-fiber'
 import ThreeCar from '../../components/ThreeCar'
 import ThreeGround from '../../components/ThreeGround'
@@ -9,6 +9,8 @@ import getRandomInt from '../../utils/getRandomInt'
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
 import { useSpring } from 'react-spring'
 import { OrbitControls } from 'drei'
+import QuizDialog from '../../components/QuizDialog'
+import Gauge from '../../components/Gauge'
 
 function Loading() {
 	return (
@@ -26,14 +28,14 @@ function Loading() {
 	);
 }
 
-function Controls() {
+const Controls = () => {
     const { gl, camera } = useThree()
   
     useSpring({
         from: { x: 0, z: -3 },
-        to: [{ x: 1, z: 0 }, { x: 0, z: 3 }],
+        to: [{ x: 1, z: 0 }, { x: 0, z: 4 }],
         onFrame: p => {
-            camera.position.y = 1
+            camera.position.y = 2
             camera.position.x = p.x
             camera.position.z = p.z
         },
@@ -42,7 +44,7 @@ function Controls() {
     })
   
     return <OrbitControls target={[0, 0, 0]} args={[camera, gl.domElement]} enabled={false} />
-  }
+}
 
 const Game = () =>{
     return(
@@ -54,7 +56,7 @@ const Game = () =>{
                 <Suspense fallback={<Loading />}>
                     <ThreeCar />
                 </Suspense>
-                <ThreeText />
+                {/* <ThreeText /> */}
                 <ThreeGround />
 
                 <EffectComposer>
@@ -64,6 +66,8 @@ const Game = () =>{
 
                 <Controls />
             </Canvas>
+            <QuizDialog />
+            <Gauge />
         </div>
     )
 }
