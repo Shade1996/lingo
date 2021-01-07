@@ -24,8 +24,6 @@ export default function Car() {
         }
     }, [])
 
-    
-
 	return (
         <Spring from={{ lane: 0 }} to={{ lane: lane }}>
             {p => (

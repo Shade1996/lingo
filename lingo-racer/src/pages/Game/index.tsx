@@ -11,8 +11,19 @@ import { useSpring } from 'react-spring'
 import { OrbitControls } from 'drei'
 import QuizDialog from '../../components/QuizDialog'
 import Gauge from '../../components/Gauge'
+import Key from '../../components/Key/Key'
+import Keys from '../../components/Key/Keys'
+import { useCarLoaded } from '../../state/useCarLoaded'
 
 function Loading() {
+    const [carLoaded, setCarLoaded] = useCarLoaded()
+    
+    useEffect(() => {
+        return () => {
+            setCarLoaded(true)
+        }
+    }, [])
+
 	return (
 		<mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
 			<sphereGeometry attach="geometry" args={[1, 16, 16]} />
@@ -67,7 +78,10 @@ const LetterGenerator = () => {
     )
 }
 
+
 const Game = () =>{
+    const [size, setSize] = useState("text-lg")
+    
     return(
         <div className="w-screen h-screen">
             <Canvas>
@@ -87,7 +101,8 @@ const Game = () =>{
 
                 <Controls />
             </Canvas>
-            <QuizDialog />
+            {/* <QuizDialog /> */}
+            <Keys />
             <Gauge />
         </div>
     )
