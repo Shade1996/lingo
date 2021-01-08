@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import GaugeChart from 'react-gauge-chart'
 import { useProxy } from 'valtio'
-import { gasState } from '../../state/betterGas'
+import { gasState } from '../../state/state'
 
 function Gauge() {
     useProxy(gasState)

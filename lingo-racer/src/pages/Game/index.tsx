@@ -13,14 +13,13 @@ import QuizDialog from '../../components/QuizDialog'
 import Gauge from '../../components/Gauge'
 import Key from '../../components/Key/Key'
 import Keys from '../../components/Key/Keys'
-import { useCarLoaded } from '../../state/useCarLoaded'
+import { carState } from '../../state/state'
+import { useProxy } from 'valtio'
 
 function Loading() {
-    const [carLoaded, setCarLoaded] = useCarLoaded()
-    
     useEffect(() => {
         return () => {
-            setCarLoaded(true)
+            carState.loaded = true
         }
     }, [])
 
@@ -42,7 +41,7 @@ function Loading() {
 const Controls = () => {
     const { gl, camera } = useThree()
   
-    useSpring({
+    useSpring(() => ({
         from: { x: 0, z: -3 },
         to: [{ x: 1, z: 0 }, { x: 0, z: 4 }],
         onFrame: p => {
@@ -52,7 +51,7 @@ const Controls = () => {
         },
         // delay: 3000,
         config: { duration: 0 }
-    })
+    }))
   
     return <OrbitControls target={[0, 0, 0]} args={[camera, gl.domElement]} enabled={false} />
 }

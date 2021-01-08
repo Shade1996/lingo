@@ -1,6 +1,6 @@
 import React from 'react'
 import Highlight, { defaultProps } from "prism-react-renderer";
-import { gasState } from '../../state/betterGas';
+import { gasState } from '../../state/state';
 import { useProxy } from 'valtio';
 
 export default function QuestionChoices(props) {

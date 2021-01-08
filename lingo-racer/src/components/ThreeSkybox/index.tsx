@@ -1,5 +1,8 @@
+import { useEffect } from "react";
 import { useThree } from "react-three-fiber"
 import { CubeTextureLoader } from "three";
+import { useProxy } from "valtio";
+import { sceneState } from "../../state/state";
 //@ts-ignore
 import src1 from "./1.jpg"
 //@ts-ignore
@@ -15,10 +18,16 @@ import src6 from "./6.jpg"
 
 export default function SkyBox() {
     const { scene } = useThree();
-    const loader = new CubeTextureLoader();
+    
+    useEffect(() => {
+        const loader = new CubeTextureLoader();
 
-    const texture = loader.load([src1, src2, src3, src4, src5, src6]);
-  
-    scene.background = texture;
+        const texture = loader.load([src1, src2, src3, src4, src5, src6], () => {
+            sceneState.loaded = true
+        });
+    
+        scene.background = texture;
+    }, [])
+
     return null;
 }

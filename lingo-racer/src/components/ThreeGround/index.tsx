@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useFrame } from 'react-three-fiber';
 import { useProxy } from 'valtio';
-import { gasState } from '../../state/betterGas';
+import { gasState } from '../../state/state';
 
 let stopped = false
 

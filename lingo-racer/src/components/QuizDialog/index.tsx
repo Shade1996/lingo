@@ -10,7 +10,7 @@ import { Spring } from 'react-spring/renderprops';
 import QuestionChoices from './QuestionChoices';
 import QuestionFillIn from './QuestionFillIn';
 import Timer from './Timer';
-import { gasState } from '../../state/betterGas';
+import { gasState } from '../../state/state';
 import { useProxy } from 'valtio';
 
 const quiz = {

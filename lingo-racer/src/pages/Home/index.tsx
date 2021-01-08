@@ -3,12 +3,12 @@ import React, { useState } from "react"
 import neonJPG from "../../../assets/neon.jpg"
 import {Spring} from 'react-spring/renderprops'
 import AnimatedText from "../../components/AnimatedText"
-import { usePage } from "../../state/usePage"
+import { useProxy } from "valtio"
+import { pageState } from "../../state/state"
 
 const Home = () => {
     const [showIntro, setShowIntro] = useState(false)
-    const [page, setPage] = usePage()
-
+    useProxy(pageState)
     return (
         <div className="w-screen h-screen bg-cover bg-center text-white" onClick={() => setShowIntro(true)} style={{
             backgroundImage: `url(${neonJPG})`
@@ -36,7 +36,7 @@ const Home = () => {
             {showIntro && <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
                 {style => (
                     <div className="w-full h-full bg-black bg-opacity-50 absolute" style={style} onClick={() => {
-                        setPage("game")
+                        pageState.pagename = "game"
                     }}>
                         <AnimatedText className="textglow p-10 center-y tracking-wider leading-normal whitespace-pre-wrap">
                             你好，赛车手！在星际穿梭时，你需要躲避前方的障碍物。快速输入路面指示牌上的单词，你就能切换车道，从而躲开障碍。准备好了吗？
