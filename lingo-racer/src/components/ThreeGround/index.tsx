@@ -1,17 +1,29 @@
 import React, { useRef } from 'react'
 import { useFrame } from 'react-three-fiber';
+import { useProxy } from 'valtio';
+import { gasState } from '../../state/betterGas';
+
+let stopped = false
 
 // A Ground plane that moves relative to the player. The player stays at 0,0
 export default function Terrain() {
-  const terrain = useRef();
+    const terrain = useRef();
+    useProxy(gasState)
 
     useFrame(() => {
+        if (stopped) return
+
         //@ts-ignore
         terrain.current.position.z += 0.4;
         //@ts-ignore
         if (terrain.current.position.z > 200)
         //@ts-ignore
         terrain.current.position.z = 10
+
+        if (gasState.gas <=0) {
+            stopped = true
+        }
+         
     });
     return (
         <mesh

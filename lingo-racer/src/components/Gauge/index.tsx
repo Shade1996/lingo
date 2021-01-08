@@ -22,8 +22,8 @@ function Gauge() {
     }, [])
 
     return (
-        <div className="fixed top-0 mt-16 ml-2 w-40">
-            <GaugeChart id="gauge-chart1" percent={gasState.gas} />
+        <div className="fixed top-0 mt-12 ml-2 w-40">
+            <GaugeChart id="gauge-chart1" arcsLength={[0.2, 0.5, 0.3]} percent={gasState.gas} colors={['#EA4228','#F5CD19','#5BE12C' ]} needleColor={'#a154ff'} needleBaseColor={'#a154ff'} animDelay={150}/>
         </div>
     )
 }
