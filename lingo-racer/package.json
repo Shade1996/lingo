@@ -23,7 +23,8 @@
 		"react-three-fiber": "^5.3.10",
 		"react-with-gesture": "^4.0.8",
 		"three": "^0.123.0",
-		"ts-dedent": "^2.0.0"
+		"ts-dedent": "^2.0.0",
+		"valtio": "^0.5.2"
 	},
 	"devDependencies": {
 		"@babel/cli": "7",

@@ -1,9 +1,10 @@
 import React from 'react'
-import { useGas } from '../../state/useGas'
 import Highlight, { defaultProps } from "prism-react-renderer";
+import { gasState } from '../../state/betterGas';
+import { useProxy } from 'valtio';
 
 export default function QuestionChoices(props) {
-    const [gas, setGas] = useGas()
+    useProxy(gasState)
     const { q, setAnswer } = props
 
     return (
@@ -14,8 +15,8 @@ export default function QuestionChoices(props) {
                 <div key={i} onClick={() => {
                     const isCorrect = i === q.answer
 
-                    if (!isCorrect) setGas(gas - 0.34)
-                    else setGas(gas + 0.1)
+                    if (!isCorrect) gasState.gas -= 0.34
+                    else gasState.gas += 0.1
 
                     setAnswer(isCorrect)
                 }}>

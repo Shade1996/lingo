@@ -1,13 +1,29 @@
 import React from 'react'
+import { useEffect } from 'react'
 import GaugeChart from 'react-gauge-chart'
-import { useGas } from '../../state/useGas'
+import { useProxy } from 'valtio'
+import { gasState } from '../../state/betterGas'
 
 function Gauge() {
-    const [gas] = useGas()
+    useProxy(gasState)
+
+    useEffect(() => {
+        setTimeout(() => {
+            const interval = setInterval(()=>{
+
+                gasState.gas -= 0.08
+                   
+                if (gasState.gas <= 0 ){
+                    gasState.gas = 0
+                    clearInterval(interval)
+                }
+            },1000)
+        }, 1500);
+    }, [])
 
     return (
         <div className="fixed top-0 mt-16 ml-2 w-40">
-            <GaugeChart id="gauge-chart1" percent={gas} />
+            <GaugeChart id="gauge-chart1" percent={gasState.gas} />
         </div>
     )
 }

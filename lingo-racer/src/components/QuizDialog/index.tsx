@@ -5,12 +5,13 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { green } from '@material-ui/core/colors';
 import CancelIcon from '@material-ui/icons/Cancel';
 import GrowTransition from '../GrowTransition';
-import { useGas } from '../../state/useGas';
 import Pizzicato from '../Pizzicato';
 import { Spring } from 'react-spring/renderprops';
 import QuestionChoices from './QuestionChoices';
 import QuestionFillIn from './QuestionFillIn';
 import Timer from './Timer';
+import { gasState } from '../../state/betterGas';
+import { useProxy } from 'valtio';
 
 const quiz = {
     title: "level 1 复习",
@@ -114,7 +115,8 @@ export default function QuizDialog() {
 
     }
 
-    const [gas] = useGas()
+    useProxy(gasState)
+
     const [correct, setCorrect] = useState(true)
     const [show, setShow] = useState(false)
     const [qIndex, setQIndex] = useState(0)
@@ -153,7 +155,7 @@ export default function QuizDialog() {
             )}
             <Timer pause={show} totalTime={50}/>
             <ResultDialog correct={correct} open={show} />
-            <Spring from={{ frequency: 400 }} to={{ frequency: gas * 3000 + 200 }}>
+            <Spring from={{ frequency: 400 }} to={{ frequency: gasState.gas * 3000 + 200 }}>
                 {p => (
                     <Pizzicato frequency={p.frequency} />
                 )}

@@ -14,7 +14,7 @@ const App = () => {
             {/* {page === "home" && <Home />} */}
             {/* {page === "game" && <Game />} */}
             <Game />
-            {carLoaded ? null : <Loading />}
+            {/* {carLoaded ? null : <Loading />} */}
         </>
     )
 }
