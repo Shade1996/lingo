@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Key from './Key'
+//@ts-ignore
+import backSvg from "../asset/back.svg"
+//@ts-ignore 
+import enterSvg from "../asset/enter.svg"
+//@ts-ignore
+import shiftSvg from "../asset/shift.svg"
+//@ts-ignore
+import onshiftSvg from "../asset/onshift.svg"
 
 const lineSymbol = ["{","}","[","]","(",")",",",".","/",";","\"","'","<",">","+","-","*","%","=","!","|","&","?","\\",":","`","@","#","$","^","_"]
-console.log(lineSymbol)
 const lineNum = ["1","2","3","4","5","6","7","8","9","0"]
 
 const line0Lower = ["q","w","e","r","t","y","u","i","o","p"]
@@ -58,17 +65,23 @@ export default function Keys() {
                 })}
             </div>
             <div className="flex justify-center space-x-2 ">
-                <div className="w-6 h-8  bg-gray-700 leading-8 text-white text-center rounded-lg" onClick={() => setUpperCase(!upperCase)}>
-                    s
+                <div className="w-10 h-8  bg-gray-700 bg-center bg-no-repeat p-1 rounded-lg transform -rotate-90" onClick={() => setUpperCase(!upperCase)}>
+                    <div className="bg-no-repeat bg-center w-full h-full" style={upperCase?{backgroundImage:`url(${onshiftSvg})`}:{backgroundImage:`url(${shiftSvg})`}} ></div>
                 </div>
                 {line2.map((p,i) => {
                     return <Key text={p} key={i} />
                 })}
+                <div className="w-10 h-8  bg-gray-700 bg-center bg-no-repeat p-1 rounded-lg" onClick={() => setUpperCase(!upperCase)}>
+                    <div className="bg-no-repeat bg-center w-full h-full" style={{backgroundImage:`url(${backSvg})`}}></div>
+                </div>
             </div>
             <div className="flex justify-center space-x-2 text-white pt-1 pb-4">
-                <div className="flex-1 bg-gray-700 text-center rounded-lg">Tab</div>
-                <div className="flex-1 bg-gray-700 text-center rounded-lg">Space</div>
-                <div className="flex-1 bg-gray-700 text-center rounded-lg">Enter</div>
+                <div className="flex-initial bg-gray-700 text-center rounded-lg p-2">Tab</div>
+                <div className="flex-1 bg-gray-700 text-center rounded-lg p-2">Space</div>
+                <div className=" bg-gray-700 text-center rounded-lg p-2">
+                    <div className="w-8 h-6 bg-center bg-no-repeat transform -rotate-90"  style={{backgroundImage:`url(${enterSvg})`}}></div>
+                    {/* <img src={enterSvg} alt="123"/> */}
+                </div>
             </div>
         </div>
     )
