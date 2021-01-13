@@ -1,9 +1,9 @@
 const path = require("path")
 module.exports = (env, argv) => ({
-	"entry": path.resolve('./src/test'),
+	"entry": path.resolve('./src/index'),
 	"output": {
 		"filename": "index.js",
-		"path": path.resolve('./test')
+		"path": path.resolve('./dist')
 	},
 	"module": {
 		"rules": [
@@ -196,13 +196,13 @@ module.exports = (env, argv) => ({
 	},
 	"mode": "development",
 	"stats": "minimal",
-	"devtool": argv.mode === 'production' ? undefined : "eval-cheap-source-map",
+	"devtool": "eval-cheap-source-map",
 	"devServer": {
 		"compress": true,
 		"open": true,
 		"host": "localhost",
 		"port": 3000,
-		"contentBase": path.resolve('./test'),
+		"contentBase": path.resolve('./dist'),
 		"https": false,
 		"useLocalIp": false,
 		"hot": true

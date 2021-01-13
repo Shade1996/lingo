@@ -1,13 +1,3 @@
-import React from 'react'
-import "tailwindcss/base.css"
-import "tailwindcss/components.css"
-import "tailwindcss/utilities.css"
-import Keys from './Keys'
+import Keyboard from './Keys'
 
-export default function Keyboard() {
-    return (
-        <div>
-            <Keys />
-        </div>
-    )
-}
+export default Keyboard

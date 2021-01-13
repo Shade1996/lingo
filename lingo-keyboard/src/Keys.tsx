@@ -21,7 +21,7 @@ const line1Upper = line1Lower.map(char => char.toUpperCase())
 const line2Lower = ["z","x","c","v","b","n","m"]
 const line2Upper = line2Lower.map(char => char.toUpperCase())
 
-export default function Keys() {
+const Keys: React.FC<{ style?: React.CSSProperties, className?: string }> = ({ style, className }) => {
     const [upperCase, setUpperCase] = useState(false)
 
     const [line0, setLine0] = useState(line0Lower)
@@ -42,7 +42,7 @@ export default function Keys() {
     }, [upperCase])
 
     return (
-        <div className="w-screen fixed bottom-0 flex-col items-center space-y-4 bg-gray-800 py-2 px-2">
+        <div className={"w-screen fixed bottom-0 flex-col items-center space-y-4 bg-gray-800 py-2 px-2 " + className} style={style}>
             
             <div className="flex space-x-2 text-white overflow-x-scroll pb-2">
                 {lineSymbol.map((p,i) => (
@@ -86,3 +86,5 @@ export default function Keys() {
         </div>
     )
 }
+
+export default Keys
