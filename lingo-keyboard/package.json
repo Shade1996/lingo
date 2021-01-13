@@ -1,6 +1,6 @@
 {
 	"name": "react-coding-keyboard",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A on-screen mobile keyboard for React, with easy access to symbols and operators used in programming languages",
 	"author": "shade233",
 	"license": "MIT",
