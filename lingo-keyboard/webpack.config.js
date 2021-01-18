@@ -201,7 +201,7 @@ module.exports = (env, argv) => ({
 		"compress": true,
 		"open": true,
 		"host": "localhost",
-		"port": 3000,
+		"port": 3001,
 		"contentBase": path.resolve('./test'),
 		"https": false,
 		"useLocalIp": false,
