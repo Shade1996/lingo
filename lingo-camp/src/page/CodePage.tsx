@@ -1,7 +1,6 @@
 import { PageHeader } from 'antd'
 import React, { useState } from 'react'
 import Keyboard from 'react-coding-keyboard'
-import { Spring } from 'react-spring/renderprops'
 import { useProxy } from 'valtio'
 import Buttons from '../components/Buttons'
 import Code from '../components/Code'
@@ -31,15 +30,12 @@ export default function CodePage() {
                     </div>
                 </div>
             </Screen>
-            <Spring from={{ y: 100 }} to={{ y: showKeyboard.value ? 0 : 100 }}>
-                {p => (
-                    <Keyboard
-                     style={{ transform: `translateY(${p.y}%)` }}
-                     onKey={key => setCode(code + key)} 
-                     onBackspace={() => setCode(code.slice(0, -1))}
-                    />
-                )}
-            </Spring> 
+            <Keyboard
+             show={showKeyboard.value}
+             onHide={() => showKeyboard.value = false}
+             onKey={key => setCode(code + key)} 
+             onBackspace={() => setCode(code.slice(0, -1))}
+            />
         </>
     )
 }

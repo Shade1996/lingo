@@ -14,7 +14,7 @@
 		"axios": "^0.21.1",
 		"codemirror": "^5.59.1",
 		"react-codemirror2": "^7.2.1",
-		"react-coding-keyboard": "^0.0.6",
+		"react-coding-keyboard": "^0.0.8",
 		"react-markdown": "^5.0.3",
 		"react-screens": "^1.0.9",
 		"react-spring": "^8.0.27",

@@ -5663,10 +5663,12 @@ react-codemirror2@^7.2.1:
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-7.2.1.tgz#38dab492fcbe5fb8ebf5630e5bb7922db8d3a10c"
   integrity sha512-t7YFmz1AXdlImgHXA9Ja0T6AWuopilub24jRaQdPVbzUJVNKIYuy3uCFZYa7CE5S3UW6SrSa5nAqVQvtzRF9gw==
 
-react-coding-keyboard@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/react-coding-keyboard/-/react-coding-keyboard-0.0.6.tgz#3acac969dc14420895b56e875bf91e7b550e5e2c"
-  integrity sha512-tzmZZIGheVFSE2DxbYIWkzGHrUKOdvMY9TUfu3mQV0LV8tTUbiQ1scb97clkgaJlkmZsqqcLqv+BZsVjXjdypA==
+react-coding-keyboard@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/react-coding-keyboard/-/react-coding-keyboard-0.0.8.tgz#00e3e01e2ae652c8a8af98bd3db858619e0c68bc"
+  integrity sha512-izNcWAdhC7BuiKeuOeq3BJ5jvDo6bzqYjIdlyG6PGzdyDi+LxpaZb5ws1N6osF30O6lFyfVpzuYahVvbtrP9cw==
+  dependencies:
+    react-spring "^8.0.27"
 
 react-dom@17:
   version "17.0.1"
