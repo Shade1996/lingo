@@ -2,6 +2,12 @@
     backdrop-filter: blur(5px);
 }
 
-.site-page-header {
-    border: 1px solid rgb(235, 237, 240);
-  }
+code{
+    background-color: #F3F4F4;
+}
+.prose code::before{
+    content: none;
+}
+.prose code::after{
+    content: none;
+}

@@ -1,17 +1,31 @@
-import { Button, Divider, List, PageHeader, Typography } from 'antd'
-import React, { useState } from 'react'
+import { Avatar, Button, Checkbox, Divider, List, PageHeader, Typography } from 'antd'
+import React, { useEffect, useState } from 'react'
 import { Screen } from "react-screens"
-import { page } from '../state';
+import { markdownSrc, page } from '../state';
+import axios from "axios"
 
-const data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-  ];
+const stripNumberFromTitle = (item: string) => {
+    const parts = item.split(".")
+    const isNum = !Number.isNaN(parseFloat(parts[0]))
+    if (isNum) {
+        parts.shift()
+        parts.pop()
+        return parts.join(".")
+    }
+    else return item
+}
 
 export default function DisplayPage() {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const getData = async () => {
+            const { data: { files } } = await axios.get("/asset/index.json")
+            setData(files)
+        }
+        getData()
+    }, [])
+
     return (
         <Screen>
             <div className="flex flex-col w-full h-screen">
@@ -49,9 +63,18 @@ export default function DisplayPage() {
                          
                          dataSource={data}
                          renderItem={item => (
-                             <List.Item onClick={() => page.value = "lesson"}>
-                             {/* <Typography.Text mark>[ITEM]</Typography.Text> */}
-                              {item}
+                             <List.Item  onClick={() => {
+                                 page.value = "lesson"
+                                 markdownSrc.value = "/asset/Basic JavaScript/" + item
+                             }}>
+                                <div className="flex items-center gap-4">
+                                    <div>
+                                        <Checkbox onChange={(e) => e.target.checked} />
+                                    </div>
+                                    <div className="flex-grow">
+                                        {stripNumberFromTitle(item)}
+                                    </div>
+                                </div>
                              </List.Item>
                          )}
                         />
