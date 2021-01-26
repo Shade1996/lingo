@@ -9,7 +9,6 @@ export default function CodeInfo({ style }) {
     useProxy(markdownSrc)
 
     const [markdown, setMarkdown] = useState("")
-
     useEffect(() => {
         axios.get(markdownSrc.value).then(result => {
             setMarkdown(result.data)

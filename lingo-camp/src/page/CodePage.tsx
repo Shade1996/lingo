@@ -5,14 +5,16 @@ import { useProxy } from 'valtio'
 import Buttons from '../components/Buttons'
 import Code from '../components/Code'
 import CodeInfo from '../components/CodeInfo'
-import { page, showKeyboard } from '../state'
+import { markdownSrc, page, showKeyboard } from '../state'
 import { Screen } from "react-screens"
+import formatTitle from '../utils/formatTitle'
+
+
 
 export default function CodePage() {
     useProxy(showKeyboard)
 
     const [code, setCode] = useState("")
-
     return (
         <>
             <Screen>
@@ -21,7 +23,7 @@ export default function CodePage() {
                     className="w-full"
                     onBack={() => page.value = "home"}
                     // title="Comment Your JavaScript CodePassed"
-                    subTitle="Comment Your JavaScript CodePassed"
+                    subTitle={formatTitle(markdownSrc.value)}
                     />
                     <div className="p-4 flex-grow overflow-scroll">
                         <CodeInfo style={{ display: showKeyboard.value ? "none" : "block" }} />

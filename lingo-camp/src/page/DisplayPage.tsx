@@ -1,21 +1,15 @@
 import { Avatar, Button, Checkbox, Divider, List, PageHeader, Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Screen } from "react-screens"
-import { markdownSrc, page } from '../state';
+import { completedArray, markdownSrc, page } from '../state';
 import axios from "axios"
-
-const stripNumberFromTitle = (item: string) => {
-    const parts = item.split(".")
-    const isNum = !Number.isNaN(parseFloat(parts[0]))
-    if (isNum) {
-        parts.shift()
-        parts.pop()
-        return parts.join(".")
-    }
-    else return item
-}
+import stripNumberFromTitle from '../utils/stripNumberFromTitle';
+import formatOthers from '../utils/formatOthers';
+import { useProxy } from 'valtio';
 
 export default function DisplayPage() {
+    useProxy(completedArray)
+
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -69,10 +63,10 @@ export default function DisplayPage() {
                              }}>
                                 <div className="flex items-center gap-4">
                                     <div>
-                                        <Checkbox onChange={(e) => e.target.checked} />
+                                        <Checkbox checked={completedArray.includes(item)} onChange={(e) => completedArray.push(item)} />
                                     </div>
-                                    <div className="flex-grow">
-                                        {stripNumberFromTitle(item)}
+                                    <div className={`flex-grow ${(completedArray.includes(item) ? "line-through" : "")}`}>
+                                        {formatOthers(stripNumberFromTitle(item))}
                                     </div>
                                 </div>
                              </List.Item>
