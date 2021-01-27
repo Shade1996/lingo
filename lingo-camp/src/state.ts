@@ -6,6 +6,6 @@ export const markdownSrc = proxy({ value: "" })
 
 export const page = proxy({ value: "home" as "home" | "lesson" })
 
-export const completedArray = proxy([] as Array<string>)
+export const completedArray = proxy({ value: [] as Array<string>})
 
 subscribe(page, () => showKeyboard.value = false)

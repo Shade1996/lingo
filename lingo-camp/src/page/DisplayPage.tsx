@@ -63,9 +63,9 @@ export default function DisplayPage() {
                              }}>
                                 <div className="flex items-center gap-4">
                                     <div>
-                                        <Checkbox checked={completedArray.includes(item)} onChange={(e) => completedArray.push(item)} />
+                                        <Checkbox checked={completedArray.value.includes(item)} onChange={(e) => completedArray.value.push(item)} />
                                     </div>
-                                    <div className={`flex-grow ${(completedArray.includes(item) ? "line-through" : "")}`}>
+                                    <div className={`flex-grow ${(completedArray.value.includes(item) ? "line-through" : "")}`}>
                                         {formatOthers(stripNumberFromTitle(item))}
                                     </div>
                                 </div>

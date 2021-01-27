@@ -9,10 +9,19 @@ export default function CodeInfo({ style }) {
     useProxy(markdownSrc)
 
     const [markdown, setMarkdown] = useState("")
+    
     useEffect(() => {
-        axios.get(markdownSrc.value).then(result => {
-            setMarkdown(result.data)
-        })
+        (async () => {
+            const { data } = await axios.get(markdownSrc.value)
+
+            const exercise = data.split("------")[1]
+            const [description, codeMd] = exercise.split("```js")
+
+            const code = codeMd.split("```")[0]
+            console.log(code)
+
+            setMarkdown(data)
+        })()
     }, [markdownSrc.value])
 
     return (
