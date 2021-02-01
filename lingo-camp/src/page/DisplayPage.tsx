@@ -6,6 +6,7 @@ import axios from "axios"
 import stripNumberFromTitle from '../utils/stripNumberFromTitle';
 import formatOthers from '../utils/formatOthers';
 import { useProxy } from 'valtio';
+import { files, root } from '../utils/baseURL';
 
 export default function DisplayPage() {
     useProxy(completedArray)
@@ -14,7 +15,7 @@ export default function DisplayPage() {
 
     useEffect(() => {
         const getData = async () => {
-            const { data: { files } } = await axios.get("/asset/index.json")
+            const { data: { files } } = await axios.get(root + "index.json")
             setData(files)
         }
         getData()
@@ -59,7 +60,7 @@ export default function DisplayPage() {
                          renderItem={item => (
                              <List.Item  onClick={() => {
                                  page.value = "lesson"
-                                 markdownSrc.value = "/asset/Basic JavaScript/" + item
+                                 markdownSrc.value = files + item
                              }}>
                                 <div className="flex items-center gap-4">
                                     <div>

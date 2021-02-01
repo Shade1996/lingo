@@ -1,0 +1,88 @@
+{
+  "main": {
+    "id": "448c1363b9b77cc1",
+    "type": "split",
+    "children": [
+      {
+        "id": "deffbc4e8c8e513a",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4c512950ea7aa570",
+    "type": "split",
+    "children": [
+      {
+        "id": "00732afe30933a6f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a06f0b1bbc4679d0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d363c256cbe8837a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f1c5484e09ede4de",
+    "type": "split",
+    "children": [
+      {
+        "id": "19a82e1d69178e23",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6fec0eb90f9735a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "2. Declare JavaScript Variables.md",
+    "1. Comment Your JavaScript Code.md"
+  ]
+}

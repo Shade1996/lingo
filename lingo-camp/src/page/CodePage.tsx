@@ -15,6 +15,7 @@ export default function CodePage() {
     useProxy(showKeyboard)
     useProxy(code)
     // const [code, setCode] = useState("")
+    console.log(markdownSrc.value)
     return (
         <>
             <Screen>
