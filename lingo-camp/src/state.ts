@@ -8,4 +8,6 @@ export const page = proxy({ value: "home" as "home" | "lesson" })
 
 export const completedArray = proxy({ value: [] as Array<string>})
 
+export const code = proxy({value:""})
+
 subscribe(page, () => showKeyboard.value = false)

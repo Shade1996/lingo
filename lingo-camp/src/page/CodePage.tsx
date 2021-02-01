@@ -5,7 +5,7 @@ import { useProxy } from 'valtio'
 import Buttons from '../components/Buttons'
 import Code from '../components/Code'
 import CodeInfo from '../components/CodeInfo'
-import { markdownSrc, page, showKeyboard } from '../state'
+import { code, markdownSrc, page, showKeyboard } from '../state'
 import { Screen } from "react-screens"
 import formatTitle from '../utils/formatTitle'
 
@@ -13,8 +13,8 @@ import formatTitle from '../utils/formatTitle'
 
 export default function CodePage() {
     useProxy(showKeyboard)
-
-    const [code, setCode] = useState("")
+    useProxy(code)
+    // const [code, setCode] = useState("")
     return (
         <>
             <Screen>
@@ -27,7 +27,7 @@ export default function CodePage() {
                     />
                     <div className="p-4 flex-grow overflow-scroll">
                         <CodeInfo style={{ display: showKeyboard.value ? "none" : "block" }} />
-                        <Code code={code} />
+                        <Code code={code.value} />
                         <Buttons />
                     </div>
                 </div>
@@ -35,8 +35,8 @@ export default function CodePage() {
             <Keyboard
              show={showKeyboard.value}
              onHide={() => showKeyboard.value = false}
-             onKey={key => setCode(code + key)} 
-             onBackspace={() => setCode(code.slice(0, -1))}
+             onKey={key => code.value += key} 
+            //  onBackspace={() => setCode(code.slice(0, -1))}
             />
         </>
     )

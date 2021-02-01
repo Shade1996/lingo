@@ -14,9 +14,6 @@ import {UnControlled as CodeMirror} from 'react-codemirror2';
 export default function Code({ code }) {
     // const { TextArea } = Input;
     return (
-        // <div className="" onClick={() => showKeyboard.value = true}>
-        //     <TextArea rows={4} />
-        // </div>
         <div onClick={() => showKeyboard.value = true}>
             <CodeMirror
              className="pointer-events-none"
