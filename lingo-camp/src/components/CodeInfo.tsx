@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 
 import axios from "axios"
 import { useProxy } from 'valtio'
-import { code, markdownSrc } from '../state'
+import { code, markdownSrc, test } from '../state'
 
 export default function CodeInfo({ style }) {
     useProxy(markdownSrc)
@@ -12,16 +12,17 @@ export default function CodeInfo({ style }) {
     
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(markdownSrc.value)
+            let { data } = await axios.get(markdownSrc.value)
 
             try {
                 const exercise = data.split("------")[1]
                 const [description, codeMd] = exercise.split("```js")
 
-                code.value = codeMd.split("```")[0]
-            } catch (error) {
-                
-            }
+                ;[code.value, test.value] = codeMd.split("```")[0].split("//test")
+
+                data = data.replace("```js" + codeMd, "")
+
+            } catch {}
             
             setMarkdown(data)
         })()

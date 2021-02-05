@@ -1,5 +1,5 @@
 import { PageHeader } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Keyboard from 'react-coding-keyboard'
 import { useProxy } from 'valtio'
 import Buttons from '../components/Buttons'
@@ -10,12 +10,18 @@ import { Screen } from "react-screens"
 import formatTitle from '../utils/formatTitle'
 
 
-
 export default function CodePage() {
     useProxy(showKeyboard)
-    useProxy(code)
+    useProxy(markdownSrc)
     // const [code, setCode] = useState("")
-    console.log(markdownSrc.value)
+    
+    const scrollContainer = useRef()
+
+    useEffect(() => {
+        //@ts-ignore
+        scrollContainer.current.scrollTop = 0
+    }, [markdownSrc.value])
+
     return (
         <>
             <Screen>
@@ -23,12 +29,11 @@ export default function CodePage() {
                     <PageHeader
                     className="w-full"
                     onBack={() => page.value = "home"}
-                    // title="Comment Your JavaScript CodePassed"
                     subTitle={formatTitle(markdownSrc.value)}
                     />
-                    <div className="p-4 flex-grow overflow-scroll">
+                    <div ref={scrollContainer} className="p-4 flex-grow overflow-scroll">
                         <CodeInfo style={{ display: showKeyboard.value ? "none" : "block" }} />
-                        <Code code={code.value} />
+                        <Code />
                         <Buttons />
                     </div>
                 </div>

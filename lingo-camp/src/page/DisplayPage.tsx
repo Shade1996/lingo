@@ -1,7 +1,7 @@
 import { Avatar, Button, Checkbox, Divider, List, PageHeader, Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Screen } from "react-screens"
-import { completedArray, markdownSrc, page } from '../state';
+import { completedArray, indexData, markdownSrc, page } from '../state';
 import axios from "axios"
 import stripNumberFromTitle from '../utils/stripNumberFromTitle';
 import formatOthers from '../utils/formatOthers';
@@ -10,16 +10,7 @@ import { files, root } from '../utils/baseURL';
 
 export default function DisplayPage() {
     useProxy(completedArray)
-
-    const [data, setData] = useState([])
-
-    useEffect(() => {
-        const getData = async () => {
-            const { data: { files } } = await axios.get(root + "index.json")
-            setData(files)
-        }
-        getData()
-    }, [])
+    useProxy(indexData)
 
     return (
         <Screen>
@@ -56,15 +47,15 @@ export default function DisplayPage() {
                          className="bg-white rounded-2xl"
                          bordered
                          
-                         dataSource={data}
-                         renderItem={item => (
+                         dataSource={indexData.value}
+                         renderItem={(item,i) => (
                              <List.Item  onClick={() => {
                                  page.value = "lesson"
                                  markdownSrc.value = files + item
                              }}>
                                 <div className="flex items-center gap-4">
                                     <div>
-                                        <Checkbox checked={completedArray.value.includes(item)} onChange={(e) => completedArray.value.push(item)} />
+                                        <Checkbox disabled checked={completedArray.value.includes(item)} onChange={(e) => completedArray.value.push(item)} />
                                     </div>
                                     <div className={`flex-grow ${(completedArray.value.includes(item) ? "line-through" : "")}`}>
                                         {formatOthers(stripNumberFromTitle(item))}
