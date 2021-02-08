@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from 'antd';
-import { code, showKeyboard } from '../state';
+import { code, showKeyboard, test } from '../state';
 
 require('codemirror/lib/codemirror.css');
 require('codemirror/theme/material.css');
@@ -18,9 +18,8 @@ export default function Code() {
     return (
         // <div onClick={() => showKeyboard.value = true}>
             <CodeMirror
-            //  className="pointer-events-none"
              value={code.value}
-             onChange={(e, _, value) => code.value = value}
+             onChange={(e, _, value) => test.currentCode = value}
              options={{
                  mode: 'xml',
                  theme: 'material',

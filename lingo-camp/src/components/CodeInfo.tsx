@@ -16,11 +16,19 @@ export default function CodeInfo({ style }) {
 
             try {
                 const exercise = data.split("------")[1]
-                const [description, codeMd] = exercise.split("```js")
+                let [, codeMd] = exercise.split("```js")
+                const codeMdOriginal = codeMd
 
-                ;[code.value, test.value] = codeMd.split("```")[0].split("//test")
+                const stringTest = codeMd.split("//string-test")[1]?.split("\n")[0]?.trim()
 
-                data = data.replace("```js" + codeMd, "")
+                if (stringTest)
+                    codeMd = codeMd.replace("//string-test " + stringTest, "")
+
+                test.stringTest = stringTest
+
+                ;[code.value, test.normalTest] = codeMd.split("```")[0].split("//test")
+
+                data = data.replace("```js" + codeMdOriginal, "")
 
             } catch {}
             

@@ -14,7 +14,7 @@ export const completedArray = proxy({ value: [] as Array<string>})
 
 export const code = proxy({value:""})
 
-export const test = { value: "" }
+export const test = { normalTest: "", stringTest: "", currentCode: "" }
 
 export const indexData = proxy({ value: [] })
 
