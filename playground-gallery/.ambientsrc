@@ -1,0 +1,14 @@
+{
+	"name": "playground-gallery",
+	"strict": true,
+	"esnext": false,
+	"es2015": true,
+	"es5": false,
+	"library": true,
+	"node": false,
+	"react": true,
+	"jsx": true,
+	"css": true,
+	"tailwind": true,
+	"3d": true
+}

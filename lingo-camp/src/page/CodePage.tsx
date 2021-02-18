@@ -28,7 +28,10 @@ export default function CodePage() {
                 <div className="w-screen h-screen flex flex-col">
                     <PageHeader
                     className="w-full"
-                    onBack={() => page.value = "home"}
+                    onBack={() => {
+                        page.value = "home"
+                        code.value = ""
+                    }}
                     subTitle={formatTitle(markdownSrc.value)}
                     />
                     <div ref={scrollContainer} className="p-4 flex-grow overflow-scroll">

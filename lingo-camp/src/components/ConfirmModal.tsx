@@ -45,6 +45,9 @@ export default function ConfirmModal() {
                     successModal("Success", "Next item will show in 2s")
                     code.value =""
                 }
+                else if(code.value ==="") {
+                    successModal("Success", "Next item will show in 2s")
+                }
                 else {
                     errorModal("error", "Try again")
                 }

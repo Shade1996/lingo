@@ -58,7 +58,15 @@ export default function DisplayPage() {
                                         <Checkbox disabled checked={completedArray.value.includes(item)} onChange={(e) => completedArray.value.push(item)} />
                                     </div>
                                     <div className={`flex-grow ${(completedArray.value.includes(item) ? "line-through" : "")}`}>
-                                        {formatOthers(stripNumberFromTitle(item))}
+                                        {(() => {
+                                            const title = formatOthers(stripNumberFromTitle(item))
+
+                                            if (!title) {
+                                                console.log(stripNumberFromTitle(item, true))
+                                            }
+
+                                            return title
+                                        })()}
                                     </div>
                                 </div>
                              </List.Item>
