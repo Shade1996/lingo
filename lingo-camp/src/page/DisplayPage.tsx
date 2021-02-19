@@ -62,7 +62,7 @@ export default function DisplayPage() {
                                             const title = formatOthers(stripNumberFromTitle(item))
 
                                             if (!title) {
-                                                console.log(stripNumberFromTitle(item, true))
+                                                console.log(stripNumberFromTitle(item))
                                             }
 
                                             return title

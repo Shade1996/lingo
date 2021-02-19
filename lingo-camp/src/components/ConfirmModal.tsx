@@ -25,17 +25,12 @@ export default function ConfirmModal() {
     return (
         <Button className="w-full" type="primary" onClick={() =>{
             // try {
-                let correct = false
+                let correct = true
                 if (test.normalTest) {
                     correct = eval(test.currentCode + test.normalTest)
                 }
                 if (correct && test.stringTest){
-                    correct = false
-
                     const testCode = "const code = " + '`' + test.currentCode + '`\n' + test.stringTest
-
-                    console.log(testCode)
-
                     correct = eval(testCode)
                 }
                     
@@ -45,7 +40,7 @@ export default function ConfirmModal() {
                     successModal("Success", "Next item will show in 2s")
                     code.value =""
                 }
-                else if(code.value ==="") {
+                else if (code.value ==="") {
                     successModal("Success", "Next item will show in 2s")
                 }
                 else {
