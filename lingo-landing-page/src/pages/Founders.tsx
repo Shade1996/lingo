@@ -42,9 +42,9 @@ const Founders: React.FC<{ pageRef: any, bgColor: string, textColor: string }> =
       </NameCard>
 
 
-      <NameCard name="刘乐" position="联合创始人" imgSrc={candySrc}>
+      <NameCard name="Candy Liu" position="联合创始人" imgSrc={candySrc}>
         <div className="mt-2 sm:mt-0">• 英国牛津大学硕士</div>
-        <div className="mt-2 sm:mt-0">• 拥有超过10年市场营销经验，<NB>曾在LVMH集团、</NB>Pepsi、L'Oréal等500强外企<NB>任职</NB></div>
+        <div className="mt-2 sm:mt-0">• 拥有多年市场营销经验，<NB>曾在LVMH集团、</NB>Pepsi、L'Oréal等500强外企<NB>任职</NB></div>
       </NameCard>
 
       <NameCard name="叶蓉" position="课程教学总监" imgSrc={yeSrc}>
