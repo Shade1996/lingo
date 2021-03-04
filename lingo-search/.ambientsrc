@@ -1,0 +1,14 @@
+{
+	"name": "@pinyinma/playground-search",
+	"strict": true,
+	"esnext": false,
+	"es2015": true,
+	"es5": false,
+	"library": false,
+	"node": false,
+	"react": true,
+	"jsx": true,
+	"css": true,
+	"tailwind": true,
+	"3d": true
+}
