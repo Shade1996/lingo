@@ -996,6 +996,11 @@
     readdirp "^2.2.1"
     upath "^1.1.1"
 
+"@pinyinma/playground-css@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pinyinma/playground-css/-/playground-css-1.0.0.tgz#dbdaaadf8813f671e4fbe8009a2400db6bb3a4fb"
+  integrity sha512-ab/njsGmacgiszxUc4ddp5IHvNz+Xw+anG8+hhzt4Iq7lCAbYhgAFXaw9oO4MgcOszeWESl1aYmKYuqIqFQEoA==
+
 "@pinyinma/playground-theme@*":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@pinyinma/playground-theme/-/playground-theme-1.0.3.tgz#e0d6c3fb1a7b9932e427fbdd29805bc4334cef22"
